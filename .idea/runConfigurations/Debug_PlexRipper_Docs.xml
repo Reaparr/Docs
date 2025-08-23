@@ -1,6 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Debug PlexRipper Docs" type="JavascriptDebugType" uri="http://localhost:4000/" useFirstLineBreakpoints="true">
-    <mapping url="http://localhost:4000" local-file="$PROJECT_DIR$" />
-    <method v="2" />
-  </configuration>
-</component>

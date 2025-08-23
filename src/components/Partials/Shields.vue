@@ -61,39 +61,39 @@ const height = ref(32);
 const shields = transform([
   {
     label: 'Docker Pulls',
-    src: 'https://img.shields.io/docker/pulls/plexripper/plexripper',
+    src: 'https://img.shields.io/docker/pulls/reaparr/reaparr',
   },
   {
     label: 'Github Followers',
-    src: 'https://img.shields.io/github/followers/plexripper',
+    src: 'https://img.shields.io/github/followers/reaparr',
   },
   {
     label: 'Github Watchers',
-    src: 'https://img.shields.io/github/watchers/PlexRipper/PlexRipper',
+    src: 'https://img.shields.io/github/watchers/Reaparr/Reaparr',
   },
   {
     label: 'Github Forks',
-    src: 'https://img.shields.io/github/forks/PlexRipper/PlexRipper',
+    src: 'https://img.shields.io/github/forks/Reaparr/Reaparr',
   },
   {
     label: 'Github Stars',
-    src: 'https://img.shields.io/github/stars/PlexRipper',
+    src: 'https://img.shields.io/github/stars/Reaparr',
   },
   {
     label: 'Docker Stars',
-    src: 'https://img.shields.io/docker/stars/plexripper/plexripper',
+    src: 'https://img.shields.io/docker/stars/reaparr/reaparr',
   },
   {
     label: 'GitHub issues',
-    src: 'https://img.shields.io/github/issues/plexripper/plexripper',
+    src: 'https://img.shields.io/github/issues/reaparr/reaparr',
   },
   {
     label: 'Created At',
-    src: 'https://img.shields.io/github/created-at/plexripper/plexripper',
+    src: 'https://img.shields.io/github/created-at/reaparr/reaparr',
   },
   {
     label: 'License',
-    src: 'https://img.shields.io/github/license/plexripper/plexripper',
+    src: 'https://img.shields.io/github/license/reaparr/reaparr',
   },
 ]);
 
@@ -101,19 +101,19 @@ const devShields = transform([
   {
     label: 'Development Version',
     fileName: 'src/WebAPI/ClientApp/package.json',
-    src: 'https://img.shields.io/github/package-json/v/PlexRipper/PlexRipper/dev',
+    src: 'https://img.shields.io/github/package-json/v/Reaparr/Reaparr/dev',
   },
   {
-    label: 'PlexRipper Dev Image Size',
-    src: 'https://img.shields.io/docker/image-size/plexripper/plexripper/dev',
+    label: 'Reaparr Dev Image Size',
+    src: 'https://img.shields.io/docker/image-size/reaparr/reaparr/dev',
   },
   {
     label: 'Last Commit on Dev Branch',
-    src: 'https://img.shields.io/github/last-commit/PlexRipper/PlexRipper/dev',
+    src: 'https://img.shields.io/github/last-commit/Reaparr/Reaparr/dev',
   },
   {
     label: 'Commits since last release on Dev Branch',
-    src: 'https://img.shields.io/github/commits-since/plexripper/plexripper/latest',
+    src: 'https://img.shields.io/github/commits-since/reaparr/reaparr/latest',
   },
 ]);
 
@@ -121,19 +121,19 @@ const stableShields = transform([
   {
     label: 'Stable Version',
     fileName: 'src/WebAPI/ClientApp/package.json',
-    src: 'https://img.shields.io/github/package-json/v/PlexRipper/PlexRipper',
+    src: 'https://img.shields.io/github/package-json/v/Reaparr/Reaparr',
   },
   {
-    label: 'PlexRipper Latest Image Size',
-    src: 'https://img.shields.io/docker/image-size/plexripper/plexripper/latest',
+    label: 'Reaparr Latest Image Size',
+    src: 'https://img.shields.io/docker/image-size/reaparr/reaparr/latest',
   },
   {
     label: 'Last Release',
-    src: 'https://img.shields.io/github/release-date/plexripper/plexripper',
+    src: 'https://img.shields.io/github/release-date/reaparr/reaparr',
   },
   {
     label: 'Contributors',
-    src: 'https://img.shields.io/github/contributors/plexripper/plexripper',
+    src: 'https://img.shields.io/github/contributors/reaparr/reaparr',
   },
 ]);
 </script>

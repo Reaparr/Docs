@@ -1,8 +1,8 @@
-# PlexRipper Docs
+# Reaparr Docs
 
-The documentation website for [PlexRipper](https://github.com/PlexRipper/PlexRipper).
+The documentation website for [Reaparr](https://github.com/Reaparr/Reaparr).
 
-Hosted on https://www.plexripper.rocks/
+Hosted on https://www.reaparr.rocks/
 
 # Created with Nuxt Content v2
 

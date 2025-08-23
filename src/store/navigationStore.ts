@@ -24,7 +24,7 @@ export const useNavigationStore = defineStore('navigationStore', () => {
       },
       {
         label: 'Guides',
-        path: `/${PAGE.GUIDES}/overview/what-is-plexripper`,
+        path: `/${PAGE.GUIDES}/overview/what-is-reaparr`,
       },
       {
         label: 'Demo',

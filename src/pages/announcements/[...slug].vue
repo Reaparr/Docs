@@ -17,11 +17,6 @@
           :authors="currentPage.authors"
           :date="currentPage.date" />
       </FlexContainer>
-      <!-- Banner -->
-      <NuxtImg
-        :src="bannerPath"
-        :alt="altDescription" />
-
       <PageRenderer :page="currentPage" />
     </FlexContainer>
     <TableOfContent

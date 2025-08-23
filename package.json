@@ -1,7 +1,7 @@
 {
   "name": "plex-ripper-docs",
   "version": "1.0.0",
-  "description": "PlexRipper Documentation",
+  "description": "Reaparr Documentation",
   "author": "JasonLandbridge",
   "private": true,
   "scripts": {

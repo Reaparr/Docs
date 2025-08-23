@@ -2,8 +2,8 @@
   <img
     :height="size"
     :width="size"
-    :src="img('/img/logo/full-logo-256.png', { width: size, height: size })"
-    alt="PlexRipper Docs Logo">
+    :src="img('https://raw.githubusercontent.com/Reaparr/Reaparr/dev/export/reaparr/logo/reaparr-full.svg', { width: size, height: size })"
+    alt="Reaparr Docs Logo">
 </template>
 
 <script setup lang="ts">
