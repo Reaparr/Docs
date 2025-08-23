@@ -33,9 +33,9 @@ integration and unit tests. Unfortunately, due to the scope of this, it became s
 more time than I anticipated initially. Which is why it has been in "limbo" for the past year. The highest priority is
 getting this version released.
 
-### Launch of www.Reaparr.rocks
+### Launch of www.reaparr.rocks
 
-In the past few weeks I've created a documentation website on [www.Reaparr.rocks](https://www.reaparr.rocks/). Mainly due to
+In the past few weeks I've created a documentation website on [www.reaparr.rocks](https://www.reaparr.rocks/). Mainly due to
 the many questions I receive; those will be answered thoroughly here. I will also be keeping track of project documentation in general on this website, so everyone can stay up to date. My
 hope is users in the community can write guides or other useful texts in order to help others with using Reaparr.
 

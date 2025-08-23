@@ -8,6 +8,16 @@ title: Frequently Asked Questions
 
 Check the [Contributing page](/contributing/overview) to see what you can do to help!
 
+## What happened to the name "PlexRipper"? Why is it now "Reaparr"?
+
+We received a trademark complaint from Plex Inc., so we had to change the name.
+
+The new name, Reaparr, is a play on “Reaper” (as in the Grim Reaper), with an extra arr to match the naming style of projects like Sonarr and Radarr. 
+We chose it because:
+ - It avoids trademark issues and is more future-proof.
+ - “Reap” fits the idea of collecting/harvesting media, while keeping a subtle edge.
+ - It aligns with the “arr” ecosystem we plan to integrate with.
+
 ## How can I show my appreciation?
 
 The rising number of GitHub stars, docker pulls and users going out of their way to make bug reports and give feedback
