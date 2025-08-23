@@ -19,8 +19,8 @@ import { get, set, useDark } from '@vueuse/core';
 import { queryContent, useHead, useRoute } from '#imports';
 
 useHead({
-  title: 'PlexRipper Docs',
-  meta: [{ name: 'description', content: 'Documentation website for the PlexRipper project' }],
+  title: 'Reaparr Docs',
+  meta: [{ name: 'description', content: 'Documentation website for the Reaparr project' }],
   link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
 });
 

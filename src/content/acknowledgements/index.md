@@ -4,7 +4,7 @@ title: Acknowledgements
 
 # Acknowledgements
 
-Thus far, PlexRipper has been created and developed by [JasonLandbridge](https://github.com/JasonLandbridge), but this
+Thus far, Reaparr has been created and developed by [JasonLandbridge](https://github.com/JasonLandbridge), but this
 could not have been done without the exceptional help of many others.
 
 An absolute massive thank you to the following people!
@@ -18,7 +18,7 @@ An absolute massive thank you to the following people!
 
 - [Michael Altmann](https://github.com/altmann) for his awesome work
   on [Fluent Results](https://github.com/altmann/FluentResults) and the time he spent helping with making Fluent Results
-  work in PlexRipper!
+  work in Reaparr!
 
 - [Dan Wahlin](https://github.com/DanWahlin) for his awesome work
   on [Observable-Store](https://github.com/DanWahlin/Observable-Store) and the time he spent helping out with questions!
@@ -32,12 +32,12 @@ special thank you!
   , [Nuxt.js](https://nuxtjs.org/) and [RxJS](https://www.learnrxjs.io/)!
 
 - The developers and contributors behind the beautiful [Vanta.js](https://www.vantajs.com/) project that is used to show
-  the awesome background in PlexRipper!
+  the awesome background in Reaparr!
 
 ## Translation
 
-- [Starnakin](https://github.com/starnakin) for his awesome work on translating PlexRipper to French!
-- [Artugr18](https://github.com/Artugr18) for his awesome work on translating PlexRipper to Polish!
+- [Starnakin](https://github.com/starnakin) for his awesome work on translating Reaparr to French!
+- [Artugr18](https://github.com/Artugr18) for his awesome work on translating Reaparr to Polish!
 
 ## Inspiration
 
@@ -57,4 +57,4 @@ providing us with free licenses of their great tools!
 ## Thanks, but no thanks
 
 - Several pretentious "holier than thou" Reddit users over in [/r/Plex](https://www.reddit.com/r/PleX/) for being a pain in the ass and motivating me
-  to create PlexRipper.
+  to create Reaparr.

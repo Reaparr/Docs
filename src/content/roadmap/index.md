@@ -8,13 +8,13 @@ title: Roadmap
 
 Major stability update!
 
-See release [here](https://github.com/PlexRipper/PlexRipper/releases/tag/v0.9.0)
+See release [here](https://github.com/Reaparr/Reaparr/releases/tag/v0.9.0)
 
 ## v0.9.1
 
 - Be able to choose which media quality to download
 - Change the https://plex.tv/pms/servers.xml endpoint to the new v2
-- Investigate reverse proxy issue https://github.com/PlexRipper/PlexRipper/issues/82
+- Investigate reverse proxy issue https://github.com/Reaparr/Reaparr/issues/82
 
 # v0.10.0
 
@@ -25,7 +25,7 @@ See release [here](https://github.com/PlexRipper/PlexRipper/releases/tag/v0.9.0)
 
 - Searchbar
 - Downloaded files having root permissions
-- Make PlexRipper compatible with ARM64 arhitecture
+- Make Reaparr compatible with ARM64 arhitecture
 - Integrate with https://github.com/sirk123au/ArrTools
 
 # v0.12.0

@@ -7,7 +7,7 @@
       <div class="my-4 text-center">
         <Logo
           :size="256" />
-        <h1>PlexRipper</h1>
+        <h1><i>REAPARR</i></h1>
       </div>
       <Shields />
     </FlexContainer>

@@ -25,7 +25,7 @@
     </template>
 
     <template #end>
-      <!-- Github PlexRipper Link -->
+      <!-- Github Reaparr Link -->
       <Button
         as="a"
         class="mx-2"
@@ -49,20 +49,20 @@
       <Button
         as="a"
         class="mx-2"
-        href="https://github.com/PlexRipper/PlexRipper"
+        href="https://github.com/Reaparr/Reaparr"
         icon=""
         rel="noopener"
         outlined
         target="_blank">
         <Icon name="mdi-github" />
-        PlexRipper
+        Reaparr
       </Button>
 
       <!-- Github Docs Link -->
       <Button
         as="a"
         class="mx-2"
-        href="https://github.com/PlexRipper/Docs"
+        href="https://github.com/Reaparr/Docs"
         icon=""
         outlined
         rel="noopener"

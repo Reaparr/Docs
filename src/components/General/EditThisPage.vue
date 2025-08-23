@@ -18,6 +18,6 @@ const props = withDefaults(defineProps<{
   path: '',
 });
 const link = computed(() => {
-  return `https://github.com/PlexRipper/Docs/edit/master/src/content/${props.path}`;
+  return `https://github.com/Reaparr/Docs/edit/master/src/content/${props.path}`;
 });
 </script>
