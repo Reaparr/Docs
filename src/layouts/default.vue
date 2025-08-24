@@ -21,7 +21,9 @@ import { queryContent, useHead, useRoute } from '#imports';
 useHead({
   title: 'Reaparr Docs',
   meta: [{ name: 'description', content: 'Documentation website for the Reaparr project' }],
-  link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }],
+  link: [
+    { rel: 'icon', type: 'image/svg+xml', href: 'https://raw.githubusercontent.com/Reaparr/Reaparr/refs/heads/dev/export/reaparr/logo/reaparr-single.svg' },
+  ],
 });
 
 const route = useRoute();

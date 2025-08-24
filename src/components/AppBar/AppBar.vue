@@ -6,6 +6,7 @@
         text
         to="/">
         <Logo :size="36" />
+        <LogoTitle :height="36" />
       </Button>
     </template>
 
