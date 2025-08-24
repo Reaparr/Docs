@@ -49,14 +49,14 @@ exposed to a Plex server its downloading from.
 
 **Make sure to change this as soon as you log in!**
 
-Username: `ReaparrRocks`
+Username: `PlexRipperRocks`
 
 Password: `Pl€XR!ℙℙ€R69`
 
 ## What if I forgot my username and password to log into Reaparr?  
 
 1. Shutdown Reaparr
-2. Open `/Config/ReaparrSettings.json` in a text editor
+2. Open `/Config/PlexRipperSettings.json` in a text editor
 3. Change `ResetCredentials` to `true`
 4. Start Reaparr again, and you will be able to log in with the default username and password
 
