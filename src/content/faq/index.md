@@ -51,7 +51,7 @@ exposed to a Plex server its downloading from.
 
 Username: `PlexRipperRocks`
 
-Password: `Pl€XR!ℙℙ€R69`
+Password: `R€Aℙℙ@rr69`
 
 ## What if I forgot my username and password to log into Reaparr?  
 
