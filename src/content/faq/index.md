@@ -49,7 +49,7 @@ exposed to a Plex server its downloading from.
 
 **Make sure to change this as soon as you log in!**
 
-Username: `PlexRipperRocks`
+Username: `ReaparrRocks`
 
 Password: `R€Aℙℙ@rr69`
 
