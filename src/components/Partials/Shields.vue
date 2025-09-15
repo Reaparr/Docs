@@ -100,7 +100,7 @@ const shields = transform([
 const devShields = transform([
   {
     label: 'Development Version',
-    fileName: 'src/WebAPI/ClientApp/package.json',
+    fileName: 'src/AppHost/ClientApp/package.json',
     src: 'https://img.shields.io/github/package-json/v/Reaparr/Reaparr/dev',
   },
   {
@@ -120,7 +120,7 @@ const devShields = transform([
 const stableShields = transform([
   {
     label: 'Stable Version',
-    fileName: 'src/WebAPI/ClientApp/package.json',
+    fileName: 'src/AppHost/ClientApp/package.json',
     src: 'https://img.shields.io/github/package-json/v/Reaparr/Reaparr',
   },
   {
