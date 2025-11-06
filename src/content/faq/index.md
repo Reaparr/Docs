@@ -27,6 +27,19 @@ is already the biggest honor for me.
   and [Docs](https://github.com/Reaparr/Docs).
 - You can give a star on the Docker page for [Reaparr](https://hub.docker.com/r/reaparr/reaparr/).
 
+## How can I donate?
+
+GitHub Sponsors is available:
+
+ - Use the GitHub Sponsors page: [github.com/sponsors/Reaparr](https://github.com/sponsors/Reaparr)
+ - Click the “Sponsor” button on the [Reaparr](https://github.com/Reaparr/Reaparr) repo to make a one‑time or monthly contribution.
+
+Other ways to support:
+
+- Star the GitHub repos: [Reaparr](https://github.com/Reaparr/Reaparr) and [Docs](https://github.com/Reaparr/Docs)
+- Contribute code/docs, report bugs, or suggest features
+- Join the [Discord](https://discord.com/invite/Qa3BtxN77g) and spread the word
+
 ## Is Reaparr detectable by Plex server owners?
 
 Yes and no.
@@ -98,6 +111,44 @@ Make sure that the "Allow username to be used when signing in" is checked.
 4. Make sure it's checked and then click "Save Changes"
 
 ![Username Plex Question](/img/faq/username-plex-question.png){.responsive-img}
+
+## How do I get my Plex account auth token and use it in Reaparr?
+
+Use Plex’s official method:
+
+1. Sign in to [Plex Web](https://app.plex.tv/).
+2. Open a library and click a movie or show.
+3. Open the item menu and choose "View XML" (i.e., view the XML for the item).
+4. In the URL, copy the value after `X-Plex-Token=` (stop before the next `&`).
+
+This follows Plex’s guide: [Finding an authentication token / X-Plex-Token](https://support.plex.tv/articles/204059436-finding-an-authentication-token-x-plex-token/).
+**Note: This does not create a new token; it reveals an existing account token.**
+
+Reaparr method if you want to create a new token to share:
+
+1. Add your Plex account in Reaparr using your username and password,
+2. Open that Plex account in Reaparr.
+3. Click "Generate Token" to create a new token you can share.
+
+## Where does Reaparr store its configuration and data?
+
+- Inside the app data directory (container path is `/Config`).
+- When using Docker, map a host folder to `/Config` to persist settings, database, and logs across updates.
+
+## How do I report a bug or request a feature?
+
+- Open an issue on GitHub: [Reaparr Issues](https://github.com/Reaparr/Reaparr/issues)
+- Include steps to reproduce, expected vs actual behavior, and relevant logs/screenshots.
+- You can also discuss first in the community [Discord](https://discord.com/invite/Qa3BtxN77g).
+
+## Which platforms are supported for installation?
+
+- [Docker](/guides/installation/docker)
+- [Unraid](/guides/installation/unraid)
+- [Linux](/guides/installation/linux)
+- [Windows](/guides/installation/windows)
+- [macOS](/guides/installation/macos)
+- [Synology](/guides/installation/synology)
 
 ## The background of Reaparr is dark gray, is that normal?
 
