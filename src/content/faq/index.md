@@ -163,3 +163,7 @@ Check the [homepage](/) for what is currently happening or join the [discord](ht
 Yes, I ([JasonLandbridge](https://github.com/JasonLandbridge)) work as a freelance Vue.js/.NET developer, and I'm
 always looking forward to the next awesome project. But if you're secretly hoping for more updates on Reaparr, then
 you might not want to hire me ;-)
+
+## Where can I find the log files?
+
+Logs are stored in mounted Docker volume `/Config/Logs`.
