@@ -73,11 +73,14 @@ Password: `R€Aℙℙ@rr69`
 3. Change `ResetCredentials` to `true`
 4. Start Reaparr again, and you will be able to log in with the default username and password
 
+## Where can I find the log files?
+
+Logs are stored in mounted Docker volume `/Config/Logs`.
+
 ## How is Reaparr spelled?
 
 Ah yes, the main question in life. Even I, as its almighty creator, am not too sure. But in my infinite, most likely
-misspelling, wisdom have settled on "Reaparr". Even though the capital R in a single word doesn't make too much
-sense.
+misspelling, wisdom have settled on "Reaparr". 
 
 ## What is the difference between Reaparr stable and dev?
 
@@ -164,6 +167,4 @@ Yes, I ([JasonLandbridge](https://github.com/JasonLandbridge)) work as a freelan
 always looking forward to the next awesome project. But if you're secretly hoping for more updates on Reaparr, then
 you might not want to hire me ;-)
 
-## Where can I find the log files?
 
-Logs are stored in mounted Docker volume `/Config/Logs`.
