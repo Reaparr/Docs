@@ -77,6 +77,39 @@ Password: `R€Aℙℙ@rr69`
 
 Logs are stored in mounted Docker volume `/Config/Logs`.
 
+## I'm getting "Permission denied" or "Access to the path is denied" errors when downloading files. How do I fix this?
+
+This is typically a file permission issue with your mounted download directory. Reaparr runs as a specific user inside the Docker container and needs proper permissions to write to your host's file system.
+
+**Solution:** Set the correct PUID and PGID environment variables in your Docker configuration.
+
+1. Find your user's PUID and PGID by running this command on your host system:
+   ```bash
+   id username
+   ```
+   Replace `username` with your actual username. This will output something like `uid=1000(username) gid=1000(groupname)`.
+
+2. Add these environment variables to your Docker configuration:
+   - **Docker Compose:** Add to your `environment:` section:
+     ```yaml
+     environment:
+       - PUID=1000
+       - PGID=1000
+     ```
+   - **Unraid:** Set these variables in the Unraid template editor (usually pre-configured, but verify they match your user).
+   - **Docker CLI:** Add `-e PUID=1000 -e PGID=1000` flags to your `docker run` command.
+
+3. **Verify folder permissions:** Ensure the mounted directories (especially your download path) have read/write permissions for the user/group you specified:
+   ```bash
+   sudo chown -R 1000:1000 /path/to/your/download/folder
+   sudo chmod -R 755 /path/to/your/download/folder
+   ```
+   Replace `1000:1000` with your PUID:PGID and `/path/to/your/download/folder` with your actual download directory path.
+
+4. Restart the container after making these changes.
+
+This ensures Reaparr runs with the same permissions as your user, allowing it to read and write files in mounted directories. For more details, see the [Linux Server documentation on PUID and PGID](https://docs.linuxserver.io/general/understanding-puid-and-pgid/#using-the-variables).
+
 ## How is Reaparr spelled?
 
 Ah yes, the main question in life. Even I, as its almighty creator, am not too sure. But in my infinite, most likely
