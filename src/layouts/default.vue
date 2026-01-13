@@ -65,8 +65,7 @@ set(isDark, get(isDark));
 </script>
 
 <style lang="scss">
-@use 'primeflex/primeflex.scss';
-@import '@/assets/scss/style.scss';
+@use '@/assets/scss/style.scss' as *;
 
 #layout-container {
   @extend .background-overlay;

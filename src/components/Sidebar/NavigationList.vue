@@ -134,24 +134,27 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
-@use 'primeflex/primeflex.scss';
-@use '@/assets/scss/style.scss';
+@use '@/assets/scss/style.scss' as *;
 
 .p-panelmenu-panel {
-  @extend .p-0;
-  @extend .line-height-4;
+  padding: 0;
+  line-height: 1.5rem;
   background: transparent !important;
   border-color: transparent !important;
 }
 
 .navigation-link {
-  @extend .block;
-  @extend .cursor-pointer;
-  @extend .white-link;
+  display: block;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit !important;
+  &:hover {
+    color: inherit !important;
+  }
 }
 
 .p-panelmenu-item-content a{
-  @extend .ml-3;
+  margin-left: 0.75rem;
 }
 
 .p-panelmenu-header:hover, .p-panelmenu-item:hover {
@@ -160,8 +163,8 @@ onMounted(() => {
 }
 
 .p-panelmenu-header-content, .p-panelmenu-item-content {
-  @extend .text-lg;
-  @extend .line-height-4;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
 }
 
 .p-panelmenu-item-content {

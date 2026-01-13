@@ -40,12 +40,10 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-@use 'primeflex/primeflex.scss';
-
 .table-of-content {
-  @extend .fixed;
-  @extend .mt-4;
-  @extend .h-full;
+  position: fixed;
+  margin-top: 1rem;
+  height: 100%;
   right: 3rem;
 }
 </style>

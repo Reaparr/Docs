@@ -38,11 +38,11 @@ withDefaults(
 </script>
 
 <style lang="scss">
-@use 'primeflex/primeflex.scss';
-@import '@/assets/scss/style.scss';
+@use '@/assets/scss/style.scss' as *;
 
 #page {
-  @extend .px-8;
+  padding-left: 2rem;
+  padding-right: 2rem;
   margin: 0 auto;
   max-width: 1200px;
   padding: 0 1rem;

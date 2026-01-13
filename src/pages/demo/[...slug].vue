@@ -157,13 +157,11 @@ const styling = ref({
 </script>
 
 <style lang="scss">
-@use 'primeflex/primeflex.scss';
-
 .p-galleria-caption {
-  @extend .text-center;
+  text-align: center;
 }
 
 .p-galleria-nav-button {
-  @extend .absolute;
+  position: absolute;
 }
 </style>

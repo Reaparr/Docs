@@ -3,7 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  srcDir: 'src/',
+  srcDir: 'src',
   ssr: true,
   dev: false,
   content: {
@@ -41,10 +41,12 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/icon',
     '@nuxt/image',
-    'nuxt-lodash',
   ],
   primevue: {
-    options: { ripple: true }, importTheme: { from: './assets/theme/primevue-theme.js' },
+    options: { ripple: true },
+    importTheme: {
+      from: fileURLToPath(new URL('./src/assets/theme/primevue-theme.js', import.meta.url)),
+    },
   },
   build: {
     transpile: ['primevue'],

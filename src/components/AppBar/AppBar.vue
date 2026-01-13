@@ -82,8 +82,6 @@ const store = useNavigationStore();
 </script>
 
 <style lang="scss">
-@use 'primeflex/primeflex.scss';
-
 html {
   &.dark {
     #app-bar {
@@ -92,14 +90,15 @@ html {
   }
 
   #app-bar {
-    @extend .m-0;
-    @extend .py-0;
-    @extend .w-full;
-    @extend .h-4rem;
-    @extend .border-noround;
-    @extend .border-none;
-    @extend .shadow-4;
-    @extend .fixed;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: 100%;
+    height: 4rem;
+    border-radius: 0;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
 
     background-color: var(--p-surface-400);
 

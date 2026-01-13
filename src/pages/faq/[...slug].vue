@@ -153,14 +153,13 @@ nuxtApp.hook('page:finish', () => {
 </script>
 
 <style lang="scss">
-@use 'primeflex/primeflex.scss';
-
 .p-accordioncontent {
   background-color: var(--p-surface-400);
 }
 
 .p-accordionpanel-active {
-  @extend .my-4;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   transition: all 0.3s;
 }
 </style>
