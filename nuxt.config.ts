@@ -1,51 +1,16 @@
-import { fileURLToPath } from 'url';
-import { defineNuxtConfig } from 'nuxt/config';
-
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
+// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  srcDir: 'src/',
-  ssr: true,
-  dev: false,
-  content: {
-    // Options
-  },
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-    head: {
-      script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js' },
-        { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
-      ],
-      noscript: [{ children: 'JavaScript is required' }],
-      link: [{
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap',
-      }],
-    },
-  },
-
-  css: ['@/assets/scss/style.scss'],
-
   modules: [
-    '@nuxt/content',
-    '@pinia/nuxt',
-    '@nuxtjs/plausible',
-    '@primevue/nuxt-module',
     '@nuxt/eslint',
-    '@nuxt/icon',
     '@nuxt/image',
+    '@nuxt/ui',
+    '@nuxt/content',
+    '@vueuse/nuxt',
+    'nuxt-og-image'
   ],
-  primevue: {
-    options: { ripple: true },
-    importTheme: {
-      from: fileURLToPath(new URL('./src/assets/theme/primevue-theme.js', import.meta.url)),
-    },
-  },
-  build: {
-    transpile: ['primevue'],
-  },
-  plausible: {
-    autoOutboundTracking: true,
+
+  devtools: {
+    enabled: true
   },
   /*
    ** Auto-import components
@@ -58,26 +23,30 @@ export default defineNuxtConfig({
         path: './components',
         pathPrefix: false,
         global: true,
-        extensions: ['vue'],
-      },
-    ],
+        extensions: ['vue']
+      }
+    ]
+  },
+  css: ['~/assets/css/main.css'],
+
+  routeRules: {
+    '/docs': { redirect: '/docs/getting-started', prerender: false }
   },
 
-  alias: {
-    const: fileURLToPath(new URL('./src/common/constants', import.meta.url)),
-    store: fileURLToPath(new URL('./src/store', import.meta.url)),
-    components: fileURLToPath(new URL('./src/components', import.meta.url)),
-  },
-  image: {
-    provider: 'ipx',
-  },
+  compatibilityDate: '2024-07-11',
+
   nitro: {
     awsAmplify: {
       imageSettings: {
-        dangerouslyAllowSVG: true,
-      },
+        dangerouslyAllowSVG: true
+      }
     },
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true
+    }
   },
+
   eslint: {
     config: {
       stylistic: {
@@ -88,10 +57,8 @@ export default defineNuxtConfig({
         braceStyle: '1tbs',
         commaDangle: 'always-multiline',
         quotes: 'single',
-        quoteProps: 'as-needed',
-      },
-    },
-  },
-
-  compatibilityDate: '2024-08-26',
-});
+        quoteProps: 'as-needed'
+      }
+    }
+  }
+})
