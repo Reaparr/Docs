@@ -1,8 +1,8 @@
 import { acceptHMRUpdate, defineStore } from 'pinia';
 import PAGE from 'const/page-name-constants';
-import type { NavItem } from '@nuxt/content';
+import type { ContentNavigationItem } from '@nuxt/content';
 import type { IPageLink } from '~/common/types/IPageLink';
-import { fetchContentNavigation, useAsyncData } from '#imports';
+import { queryCollectionNavigation, useAsyncData } from '#imports';
 
 export const useNavigationStore = defineStore('navigationStore', () => {
   const state = reactive<{
@@ -11,7 +11,7 @@ export const useNavigationStore = defineStore('navigationStore', () => {
    */
     pageItems: IPageLink[];
     sideBarState: Map<string, Record<string, boolean>>;
-    navItems: NavItem[];
+    navItems: ContentNavigationItem[];
     drawerState: boolean;
   }> ({
     navItems: [],
@@ -53,7 +53,7 @@ export const useNavigationStore = defineStore('navigationStore', () => {
   // Actions
   const actions = {
     async setup() {
-      const { data } = await useAsyncData(() => fetchContentNavigation());
+      const { data } = await useAsyncData(() => queryCollectionNavigation('content'));
       state.navItems = data.value ?? [];
     },
     setSidebarState(key: string, selected: Record<string, boolean>) {
@@ -80,7 +80,7 @@ export const useNavigationStore = defineStore('navigationStore', () => {
       return cleanNavItems(key, state.navItems);
     },
     hasSidebar(key: string): boolean {
-      return (state.navItems.find((x) => x._path.substring(1) === key)?.children ?? []).length > 1;
+      return (state.navItems.find((x) => x.path.substring(1) === key)?.children ?? []).length > 1;
     },
   };
 
@@ -96,8 +96,8 @@ export const useNavigationStore = defineStore('navigationStore', () => {
  * @param {string} pageKey
  * @param {NavItem[]} navItems
  */
-function cleanNavItems(pageKey: string, navItems: NavItem[]): NavItem[] {
-  const pageNavItems = navItems.find((x) => x._path.substring(1) === pageKey)?.children ?? [];
+function cleanNavItems(pageKey: string, navItems: ContentNavigationItem[]): ContentNavigationItem[] {
+  const pageNavItems = navItems.find((x) => x.path.substring(1) === pageKey)?.children ?? [];
   return pageNavItems.map((navItem) => {
     if (!navItem.children || navItem.children.length === 0) {
       return navItem;
@@ -105,7 +105,7 @@ function cleanNavItems(pageKey: string, navItems: NavItem[]): NavItem[] {
 
     return {
       ...navItem,
-      children: navItem.children.filter((child) => navItem._path !== child._path && navItem.title !== child._path),
+      children: navItem.children.filter((child) => navItem.path !== child.path && navItem.title !== child.path),
     };
   });
 }

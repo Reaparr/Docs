@@ -77,12 +77,12 @@ const items = computed((): MenuItem[] => {
   return navItems.map((x): MenuItem => ({
     label: x.title,
     key: 'key_' + index++,
-    route: x._path,
+    route: x.path,
     items: x.children?.map((x): MenuItem => ({
       key: 'key_' + index++,
       label: x.title,
       icon: x.icon,
-      route: x._path,
+      route: x.path,
       url: x.url,
       target: x.target,
       items: [],

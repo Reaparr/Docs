@@ -6,10 +6,10 @@
 
 <!-- Pages need a single root element to make page transition work -->
 <script setup lang="ts">
-import { queryContent, useHead, useRoute } from '#imports';
+import { queryCollection, useHead, useRoute } from '#imports';
 
 const route = useRoute();
-const currentPage = await queryContent(route.path).findOne();
+const currentPage = await queryCollection('content').path(route.path).first();
 
 useHead({
   title: `Guides - ${currentPage.title}`,

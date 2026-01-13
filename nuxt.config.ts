@@ -3,19 +3,12 @@ import { defineNuxtConfig } from 'nuxt/config';
 
 // https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  srcDir: 'src',
+  srcDir: 'src/',
   ssr: true,
   dev: false,
   content: {
-    documentDriven: false,
-    markdown: {
-      anchorLinks: false,
-    },
-    highlight: {
-      theme: 'github-dark', preload: ['ts', 'js', 'css', 'json', 'bash'],
-    },
+    // Options
   },
-
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {

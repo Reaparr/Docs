@@ -16,7 +16,7 @@
 <script lang="ts" setup>
 import { useNavigationStore } from 'store/navigationStore';
 import { get, set, useDark } from '@vueuse/core';
-import { queryContent, useHead, useRoute } from '#imports';
+import { queryCollection, useHead, useRoute } from '#imports';
 
 useHead({
   title: 'Reaparr Docs',
@@ -42,14 +42,14 @@ onMounted(() => {
           return;
         }
 
-        const currentPage = await queryContent(newPath).findOne();
-        const file = currentPage?._file || null;
+        const currentPage = await queryCollection('content').path(newPath).first();
+        const file = currentPage?.file || null;
         console.log('Edit this file:', file);
         if (file === 'index.md') {
           editThisFile.value = null;
           return;
         }
-        editThisFile.value = currentPage?._file || null;
+        editThisFile.value = currentPage?.file || null;
       } catch (error) {
         console.error(error);
         editThisFile.value = null;

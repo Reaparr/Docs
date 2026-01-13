@@ -24,7 +24,6 @@
 <script lang="ts" setup>
 import type { MarkdownNode, MarkdownParsedContent } from '@nuxt/content';
 import { kebabCase } from 'lodash-es';
-import { queryContent, useHead, useRoute, useRouter, useNuxtApp } from '#imports';
 
 interface Question {
   title: string;
@@ -39,7 +38,7 @@ const nuxtApp = useNuxtApp();
 const router = useRouter();
 const route = useRoute();
 const activePanel = ref<string | string[] | null | undefined >(null);
-const currentPage = await queryContent('faq').findOne() as MarkdownParsedContent;
+const currentPage = await queryCollection('content').path('/faq').first() as MarkdownParsedContent;
 const questions = parseQuestions();
 const styling = ref({
   colorScheme: {

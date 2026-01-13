@@ -8,7 +8,7 @@
       <NuxtLink
         v-for="(item, i) in currentPage"
         :key="i"
-        :to="item._path">
+        :to="item.path">
         <Card
           :dt="styling"
           class="max-w-24rem">
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { queryContent, useHead, useRoute } from '#imports';
+import { queryCollection, useHead, useRoute } from '#imports';
 import type { IAnnouncement } from '~/common/types/IAnnouncement';
 
 useHead({
@@ -47,7 +47,7 @@ useHead({
 });
 
 const route = useRoute();
-const currentPage: IAnnouncement[] = await queryContent(route.path).find() as IAnnouncement[];
+const currentPage: IAnnouncement[] = await queryCollection('content').path(route.path).all() as IAnnouncement[];
 
 const styling = ref({
   colorScheme: {

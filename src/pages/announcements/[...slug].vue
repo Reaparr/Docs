@@ -27,11 +27,10 @@
 
 <script setup lang="ts">
 import { format } from 'date-fns';
-import { computed, queryContent, useHead, useRoute } from '#imports';
 
 const route = useRoute();
 
-const currentPage = await queryContent(route.path).findOne();
+const currentPage = await queryCollection('content').path(route.path).first();
 
 useHead({
   title: currentPage.title,
