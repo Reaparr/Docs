@@ -97,9 +97,4 @@ set(isDark, get(isDark));
   align-items: center;
   justify-content: center;
 }
-
-// Used to keep the vanta.js background in place and overwrite the built-in position: absolute;
-.vanta-canvas {
-  position: fixed !important;
-}
 </style>

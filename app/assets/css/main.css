@@ -1,8 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
 
-@source "../../../content/**/*";
-
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
 
@@ -19,9 +17,7 @@
   --color-green-950: #052E16;
 }
 
-.dark {
-  --ui-bg: var(--ui-color-neutral-950);
-  --ui-bg-muted: var(--ui-color-neutral-900);
-  --ui-bg-elevated: var(--ui-color-neutral-900);
-  --ui-bg-accented: var(--ui-color-neutral-800);
+/* Used to keep the vanta.js background in place and overwrite the built-in position: absolute; */
+.vanta-canvas {
+  position: fixed !important;
 }

@@ -145,5 +145,9 @@ export const collections = {
   credits: defineCollection({
     source: 'credits/**/*',
     type: 'page'
+  }),
+  donate: defineCollection({
+    source: 'donate/**/*',
+    type: 'page'
   })
 }

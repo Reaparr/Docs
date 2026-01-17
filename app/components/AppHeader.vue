@@ -1,10 +1,12 @@
 <template>
   <UHeader>
     <template #left>
-      <NuxtLink to="/">
-        <AppLogo class="w-auto h-6 shrink-0" />
+      <NuxtLink
+        to="/"
+        class="flex items-center gap-2">
+        <ReaparrLogo :size="32" />
+        <ReaparrLogoTitle :height="32" />
       </NuxtLink>
-      <TemplateMenu />
     </template>
 
     <UNavigationMenu
@@ -12,73 +14,48 @@
       variant="link" />
 
     <template #right>
-      <UColorModeButton />
-
+      <!-- Github Reaparr Link -->
       <UButton
-        icon="i-lucide-log-in"
-        color="neutral"
-        variant="ghost"
-        to="/login"
-        class="lg:hidden" />
-
-      <UButton
-        label="Sign in"
-        color="neutral"
+        as="a"
+        class="mx-2"
+        href="https://discord.com/invite/Qa3BtxN77g"
+        rel="noopener"
         variant="outline"
-        to="/login"
-        class="hidden lg:inline-flex" />
+        icon=""
+        target="_blank">
+        <UIcon name="simple-icons:discord" />
+
+        Discord
+      </UButton>
 
       <UButton
-        label="Sign up"
-        color="neutral"
-        trailing-icon="i-lucide-arrow-right"
-        class="hidden lg:inline-flex"
-        to="/signup" />
-    </template>
+        as="a"
+        class="mx-2"
+        href="https://github.com/Reaparr/Reaparr"
+        icon=""
+        rel="noopener"
+        variant="outline"
+        target="_blank">
+        <UIcon name="mdi:github" />
+        Reaparr
+      </UButton>
 
-    <template #body>
-      <UNavigationMenu
-        :items="items"
-        orientation="vertical"
-        class="-mx-2.5" />
-
-      <USeparator class="my-6" />
-
+      <!-- Github Docs Link -->
       <UButton
-        label="Sign in"
-        color="neutral"
-        variant="subtle"
-        to="/login"
-        block
-        class="mb-3" />
-      <UButton
-        label="Sign up"
-        color="neutral"
-        to="/signup"
-        block />
+        as="a"
+        class="mx-2"
+        href="https://github.com/Reaparr/Docs"
+        icon=""
+        variant="outline"
+        rel="noopener"
+        target="_blank">
+        <UIcon name="mdi:github" />
+        Docs
+      </UButton>
     </template>
   </UHeader>
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
-
-const items = computed(() => [{
-  label: 'Docs',
-  to: '/docs',
-  active: route.path.startsWith('/docs'),
-}, {
-  label: 'Pricing',
-  to: '/pricing',
-}, {
-  label: 'Blog',
-  to: '/blog',
-}, {
-  label: 'Changelog',
-  to: '/changelog',
-}, {
-  label: 'Credits',
-  icon: 'i-lucide-history',
-  to: '/credits',
-}]);
+const { headerItems: items } = useNavigation();
 </script>

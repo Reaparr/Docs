@@ -20,7 +20,7 @@
 <script setup lang="ts">
 const colorMode = useColorMode();
 
-const color = computed(() => colorMode.value === 'dark' ? '#020618' : 'white');
+const color = computed(() => colorMode.value === 'dark' ? 'black' : 'white');
 
 useHead({
   meta: [
@@ -50,24 +50,7 @@ const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSe
   server: false,
 });
 
-const links = [{
-  label: 'Docs',
-  icon: 'i-lucide-book',
-  to: '/docs/getting-started',
-}, {
-  label: 'Pricing',
-  icon: 'i-lucide-credit-card',
-  to: '/pricing',
-}, {
-  label: 'Changelog',
-  icon: 'i-lucide-history',
-  to: '/changelog',
-}, {
-  label: 'Credits',
-  icon: 'i-lucide-history',
-  to: '/credits',
-},
-];
+const { footerLinks: links } = useNavigation();
 
 provide('navigation', navigation);
 </script>

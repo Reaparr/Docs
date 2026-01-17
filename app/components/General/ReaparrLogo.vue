@@ -9,10 +9,10 @@
 <script setup lang="ts">
 withDefaults(
   defineProps<{
-    size?: number
+    size?: number;
   }>(),
   {
-    size: 128
-  }
-)
+    size: 128,
+  },
+);
 </script>

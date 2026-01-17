@@ -6,11 +6,22 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'nuxt-og-image'
+    'nuxt-og-image',
   ],
-
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      script: [
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+        },
+        { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
+      ],
+      noscript: [{ textContent: 'JavaScript is required' }],
+    },
+  },
   devtools: {
-    enabled: true
+    enabled: false,
   },
   /*
    ** Auto-import components
@@ -23,14 +34,14 @@ export default defineNuxtConfig({
         path: './components',
         pathPrefix: false,
         global: true,
-        extensions: ['vue']
-      }
-    ]
+        extensions: ['vue'],
+      },
+    ],
   },
   css: ['~/assets/css/main.css'],
 
   routeRules: {
-    '/docs': { redirect: '/docs/getting-started', prerender: false }
+    '/docs': { redirect: '/docs/getting-started', prerender: false },
   },
 
   compatibilityDate: '2024-07-11',
@@ -38,13 +49,13 @@ export default defineNuxtConfig({
   nitro: {
     awsAmplify: {
       imageSettings: {
-        dangerouslyAllowSVG: true
-      }
+        dangerouslyAllowSVG: true,
+      },
     },
     prerender: {
       routes: ['/'],
-      crawlLinks: true
-    }
+      crawlLinks: true,
+    },
   },
 
   eslint: {
@@ -57,8 +68,8 @@ export default defineNuxtConfig({
         braceStyle: '1tbs',
         commaDangle: 'always-multiline',
         quotes: 'single',
-        quoteProps: 'as-needed'
-      }
-    }
-  }
-})
+        quoteProps: 'as-needed',
+      },
+    },
+  },
+});
