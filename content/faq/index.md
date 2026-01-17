@@ -179,12 +179,12 @@ Reaparr method if you want to create a new token to share:
 
 ## Which platforms are supported for installation?
 
-- [Docker](/guides/installation/docker)
-- [Unraid](/guides/installation/unraid)
-- [Linux](/guides/installation/linux)
-- [Windows](/guides/installation/windows)
-- [macOS](/guides/installation/macos)
-- [Synology](/guides/installation/synology)
+- [Docker](/docs/installation/docker)
+- [Unraid](/docs/installation/unraid)
+- [Linux](/docs/installation/linux)
+- [Windows](/docs/installation/windows)
+- [macOS](/docs/installation/macos)
+- [Synology](/docs/installation/synology)
 
 ## The background of Reaparr is dark gray, is that normal?
 
