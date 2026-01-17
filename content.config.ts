@@ -141,5 +141,9 @@ export const collections = {
       date: z.date(),
       image: z.string()
     })
+  }),
+  credits: defineCollection({
+    source: 'credits/**/*',
+    type: 'page'
   })
 }

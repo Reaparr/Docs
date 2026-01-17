@@ -1,36 +1,15 @@
-<script setup lang="ts">
-const route = useRoute()
-
-const { data: page } = await useAsyncData('changelog', () => queryCollection('changelog').first())
-const { data: versions } = await useAsyncData(route.path, () => queryCollection('versions').order('date', 'DESC').all())
-
-const title = page.value?.seo?.title || page.value?.title
-const description = page.value?.seo?.description || page.value?.description
-
-useSeoMeta({
-  title,
-  ogTitle: title,
-  description,
-  ogDescription: description
-})
-
-defineOgImageComponent('Saas')
-</script>
-
 <template>
   <UContainer>
     <UPageHeader
       v-bind="page"
-      class="py-[50px]"
-    />
+      class="py-12.5" />
 
     <UPageBody>
       <UChangelogVersions>
         <UChangelogVersion
           v-for="(version, index) in versions"
           :key="index"
-          v-bind="version"
-        >
+          v-bind="version">
           <template #body>
             <ContentRenderer :value="version.body" />
           </template>
@@ -39,3 +18,22 @@ defineOgImageComponent('Saas')
     </UPageBody>
   </UContainer>
 </template>
+
+<script setup lang="ts">
+const route = useRoute();
+
+const { data: page } = await useAsyncData('changelog', () => queryCollection('changelog').first());
+const { data: versions } = await useAsyncData(route.path, () => queryCollection('versions').order('date', 'DESC').all());
+
+const title = page.value?.seo?.title || page.value?.title;
+const description = page.value?.seo?.description || page.value?.description;
+
+useSeoMeta({
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description,
+});
+
+defineOgImageComponent('Saas');
+</script>

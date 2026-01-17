@@ -1,22 +1,3 @@
-<script setup lang="ts">
-const route = useRoute()
-
-const items = computed(() => [{
-  label: 'Docs',
-  to: '/docs',
-  active: route.path.startsWith('/docs')
-}, {
-  label: 'Pricing',
-  to: '/pricing'
-}, {
-  label: 'Blog',
-  to: '/blog'
-}, {
-  label: 'Changelog',
-  to: '/changelog'
-}])
-</script>
-
 <template>
   <UHeader>
     <template #left>
@@ -28,8 +9,7 @@ const items = computed(() => [{
 
     <UNavigationMenu
       :items="items"
-      variant="link"
-    />
+      variant="link" />
 
     <template #right>
       <UColorModeButton />
@@ -39,32 +19,28 @@ const items = computed(() => [{
         color="neutral"
         variant="ghost"
         to="/login"
-        class="lg:hidden"
-      />
+        class="lg:hidden" />
 
       <UButton
         label="Sign in"
         color="neutral"
         variant="outline"
         to="/login"
-        class="hidden lg:inline-flex"
-      />
+        class="hidden lg:inline-flex" />
 
       <UButton
         label="Sign up"
         color="neutral"
         trailing-icon="i-lucide-arrow-right"
         class="hidden lg:inline-flex"
-        to="/signup"
-      />
+        to="/signup" />
     </template>
 
     <template #body>
       <UNavigationMenu
         :items="items"
         orientation="vertical"
-        class="-mx-2.5"
-      />
+        class="-mx-2.5" />
 
       <USeparator class="my-6" />
 
@@ -74,14 +50,35 @@ const items = computed(() => [{
         variant="subtle"
         to="/login"
         block
-        class="mb-3"
-      />
+        class="mb-3" />
       <UButton
         label="Sign up"
         color="neutral"
         to="/signup"
-        block
-      />
+        block />
     </template>
   </UHeader>
 </template>
+
+<script setup lang="ts">
+const route = useRoute();
+
+const items = computed(() => [{
+  label: 'Docs',
+  to: '/docs',
+  active: route.path.startsWith('/docs'),
+}, {
+  label: 'Pricing',
+  to: '/pricing',
+}, {
+  label: 'Blog',
+  to: '/blog',
+}, {
+  label: 'Changelog',
+  to: '/changelog',
+}, {
+  label: 'Credits',
+  icon: 'i-lucide-history',
+  to: '/credits',
+}]);
+</script>
