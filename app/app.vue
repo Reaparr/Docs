@@ -2,10 +2,6 @@
   <UApp>
     <NuxtLoadingIndicator />
 
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-
     <ClientOnly>
       <LazyUContentSearch
         :files="files"
@@ -14,13 +10,17 @@
         :links="links"
         :fuse="{ resultLimit: 42 }" />
     </ClientOnly>
+
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </UApp>
 </template>
 
 <script setup lang="ts">
 const colorMode = useColorMode();
 
-const color = computed(() => colorMode.value === 'dark' ? 'black' : 'white');
+const color = computed(() => (colorMode.value === 'dark' ? 'black' : 'white'));
 
 useHead({
   meta: [
@@ -28,9 +28,7 @@ useHead({
     { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     { key: 'theme-color', name: 'theme-color', content: color },
   ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' },
-  ],
+  link: [{ rel: 'icon', href: '/favicon.ico' }],
   htmlAttrs: {
     lang: 'en',
   },
@@ -43,12 +41,21 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 
-const { data: navigation } = await useAsyncData('navigation', () => queryCollectionNavigation('docs'), {
-  transform: (data) => data.find((item) => item.path === '/docs')?.children || [],
-});
-const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSections('docs'), {
-  server: false,
-});
+const { data: navigation } = await useAsyncData(
+  'navigation',
+  () => queryCollectionNavigation('docs'),
+  {
+    transform: (data) =>
+      data.find((item) => item.path === '/docs')?.children || [],
+  },
+);
+const { data: files } = useLazyAsyncData(
+  'search',
+  () => queryCollectionSearchSections('docs'),
+  {
+    server: false,
+  },
+);
 
 const { footerLinks: links } = useNavigation();
 

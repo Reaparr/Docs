@@ -1,9 +1,5 @@
 <template>
   <UPage v-if="page">
-    <UPageHeader
-      :title="page.title"
-      :description="page.description" />
-
     <UPageBody>
       <ContentRenderer
         v-if="page.body"
