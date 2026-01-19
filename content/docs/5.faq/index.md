@@ -6,21 +6,27 @@ title: Frequently Asked Questions
 
 ## Getting Started
 
-::u-accordion
+::faq-accordion
 ---
 items:
   - label: Which platforms are supported for installation?
     slot: platforms
+    value: platforms
   - label: What is the default username and password to log into Reaparr?
     slot: default-creds
+    value: default-creds
   - label: What if I forgot my username and password to log into Reaparr?
     slot: forgot-creds
+    value: forgot-creds
   - label: What happened to the name "PlexRipper"? Why is it now "Reaparr"?
     slot: name-change
+    value: name-change
   - label: How is Reaparr spelled?
     slot: spelling
+    value: spelling
   - label: What is the difference between Reaparr stable and dev?
     slot: stable-dev
+    value: stable-dev
 ---
 
 #platforms
@@ -64,17 +70,21 @@ The dev branch contains all the latest under development changes.
 
 ## Plex Account & Authentication
 
-::u-accordion
+::faq-accordion
 ---
 items:
   - label: I tried to use my username to set up my Plex account in Reaparr, but it's not working?
     slot: username-setup
+    value: username-setup
   - label: How do I get my Plex account auth token and use it in Reaparr?
     slot: auth-token
+    value: auth-token
   - label: Is Reaparr detectable by Plex server owners?
     slot: detectable
+    value: detectable
   - label: Will Plex ban my account for the use of Reaparr?
     slot: ban-risk
+    value: ban-risk
 ---
 
 #username-setup
@@ -121,21 +131,27 @@ Most likely not, but I do not own Plex, so I can't give guarantees. If you want 
 
 ## Troubleshooting
 
-::u-accordion
+::faq-accordion
 ---
 items:
   - label: I'm getting "Permission denied" or "Access to the path is denied" errors when downloading files. How do I fix this?
     slot: permission-denied
+    value: permission-denied
   - label: Why are the poster images not showing when viewing a Plex library?
     slot: no-images
+    value: no-images
   - label: Which browsers are supported by Reaparr?
     slot: browsers
+    value: browsers
   - label: The background of Reaparr is dark gray, is that normal?
     slot: dark-background
+    value: dark-background
   - label: Where can I find the log files?
     slot: log-files
+    value: log-files
   - label: Where does Reaparr store its configuration and data?
     slot: config-location
+    value: config-location
 ---
 
 #permission-denied
@@ -197,21 +213,27 @@ Logs are stored in mounted Docker volume `/Config/Logs`.
 
 ## Community & Support
 
-::u-accordion
+::faq-accordion
 ---
 items:
   - label: How can I help?
     slot: how-to-help
+    value: how-to-help
   - label: How can I show my appreciation?
     slot: appreciation
+    value: appreciation
   - label: How can I donate?
     slot: donate
+    value: donate
   - label: How do I report a bug or request a feature?
     slot: bug-report
+    value: bug-report
   - label: Is this project dead? Why no updates? Can you hurry up?
     slot: project-status
+    value: project-status
   - label: I'm impressed with your work, can I hire you?
     slot: hire
+    value: hire
 ---
 
 #how-to-help

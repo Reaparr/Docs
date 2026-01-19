@@ -1,39 +1,105 @@
 <template>
-  <UContainer>
-    <UPageHeader
-      v-bind="page"
-      class="py-12.5" />
+  <div class="min-h-screen xl:grid xl:grid-cols-2">
+    <UPageSection
+      title="Changelog"
+      description="Display GitHub release notes as a beautiful changelog for any repository with this Nuxt UI template."
+      orientation="vertical"
+      :links="[
+        {
+          label: 'Documentation',
+          icon: 'i-lucide-book-open',
+          variant: 'ghost',
+          size: 'md',
+          to: 'https://ui.nuxt.com/getting-started/installation/nuxt',
+          target: '_blank',
+        },
+        {
+          label: 'GitHub',
+          icon: 'i-simple-icons-github',
+          variant: 'ghost',
+          size: 'md',
+          to: 'https://github.com/nuxt-ui-templates/changelog',
+          target: '_blank',
+        },
+      ]"
+      :ui="{
+        root: 'border-b border-default xl:border-b-0 xl:sticky xl:inset-y-0 xl:h-screen overflow-hidden',
+        container: 'h-full items-center justify-center',
+        wrapper: 'flex flex-col',
+        headline: 'mb-6',
+        title: 'text-left text-4xl',
+        description: 'text-left max-w-lg',
+        links: 'gap-1 justify-start -ms-2.5',
+      }">
+      <template #top>
+        <ClientOnly>
+          <SkyBg />
+        </ClientOnly>
 
-    <UPageBody>
-      <UChangelogVersions>
+        <div
+          class="absolute -right-1/2 z-[-1] rounded-full bg-primary blur-[300px] size-60 sm:size-100 transform -translate-y-1/2 top-1/2" />
+      </template>
+
+      <template #headline>
+        <AppLogo class="w-auto h-6 shrink-0 text-highlighted" />
+      </template>
+
+      <template #default />
+    </UPageSection>
+
+    <section class="px-4 sm:px-6 xl:px-0 xl:-ms-30 xl:flex-1">
+      <UColorModeButton class="fixed top-4 right-4 z-10" />
+
+      <UChangelogVersions
+        as="main"
+        :indicator-motion="false"
+        :ui="{
+          root: 'py-16 sm:py-24 lg:py-32',
+          indicator: 'inset-y-0',
+        }">
         <UChangelogVersion
-          v-for="(version, index) in versions"
-          :key="index"
-          v-bind="version">
+          v-for="version in versions"
+          :key="version.tag"
+          v-bind="version"
+          :ui="{
+            root: 'flex items-start',
+            container: 'max-w-xl',
+            header: 'border-b border-default pb-4',
+            title: 'text-3xl',
+            date: 'text-xs/9 text-highlighted font-mono',
+            indicator:
+              'sticky top-0 pt-16 -mt-16 sm:pt-24 sm:-mt-24 lg:pt-32 lg:-mt-32',
+          }">
           <template #body>
-            <ContentRenderer :value="version.body" />
+            <ClientOnly>
+              <MDC
+                v-if="version.markdown"
+                :value="version.markdown" />
+            </ClientOnly>
           </template>
         </UChangelogVersion>
       </UChangelogVersions>
-    </UPageBody>
-  </UContainer>
+    </section>
+  </div>
 </template>
 
 <script setup lang="ts">
-const route = useRoute();
-
-const { data: page } = await useAsyncData('changelog', () => queryCollection('changelog').first());
-const { data: versions } = await useAsyncData(route.path, () => queryCollection('versions').order('date', 'DESC').all());
-
-const title = page.value?.seo?.title || page.value?.title;
-const description = page.value?.seo?.description || page.value?.description;
-
-useSeoMeta({
-  title,
-  ogTitle: title,
-  description,
-  ogDescription: description,
-});
-
-defineOgImageComponent('Saas');
+const { data: versions } = await useFetch(
+  'https://api.github.com/repos/Reaparr/Reaparr/releases',
+  {
+    transform: (data: Array<{
+      name?: string;
+      tag_name: string;
+      published_at: string;
+      body: string;
+    }>) => {
+      return data.map((release) => ({
+        tag: release.tag_name,
+        title: release.name || release.tag_name,
+        date: release.published_at,
+        markdown: release.body,
+      }));
+    },
+  },
+);
 </script>
