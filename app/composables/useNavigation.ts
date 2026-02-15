@@ -15,6 +15,11 @@ export const useNavigation = () => {
       active: route.path.startsWith('/docs'),
     },
     {
+      label: 'Screenshots',
+      to: '/screenshots',
+      active: route.path.startsWith('/screenshots'),
+    },
+    {
       label: 'Changelog',
       to: '/changelog',
       active: route.path.startsWith('/changelog'),
