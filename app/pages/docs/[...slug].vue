@@ -5,7 +5,31 @@
         v-if="page.body"
         :value="page" />
 
-      <USeparator v-if="surround?.length" />
+      <USeparator>
+        <div class="flex items-center gap-2 text-sm text-muted py-3">
+          <UButton
+            :to="`https://github.com/Reaparr/Docs/edit/master/content/${page.stem}.md`"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="ghost"
+            color="neutral"
+            size="sm"
+            icon="i-lucide-pen">
+            Edit this page
+          </UButton>
+          <span>or</span>
+          <UButton
+            to="https://github.com/Reaparr/Docs/issues/new/choose"
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="ghost"
+            color="neutral"
+            size="sm"
+            icon="i-lucide-circle-alert">
+            Report an issue
+          </UButton>
+        </div>
+      </USeparator>
 
       <UContentSurround :surround="surround" />
     </UPageBody>
@@ -25,9 +49,15 @@ definePageMeta({
 
 const route = useRoute();
 
-const { data: page } = await useAsyncData(route.path, () => queryCollection('docs').path(route.path).first());
+const { data: page } = await useAsyncData(route.path, () =>
+  queryCollection('docs').path(route.path).first(),
+);
 if (!page.value) {
-  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true });
+  throw createError({
+    statusCode: 404,
+    statusMessage: 'Page not found',
+    fatal: true,
+  });
 }
 
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () => {
