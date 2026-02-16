@@ -101,13 +101,6 @@ const responsiveOptions = ref([
 
 const styling = ref({
   colorScheme: {
-    light: {
-      root: {
-        thumbnailNavButtonColor: '{white}',
-        captionColor: '{white}',
-        navButtonColor: '{white}',
-      },
-    },
     dark: {
       root: {
         thumbnailNavButtonColor: '{surface.0}',

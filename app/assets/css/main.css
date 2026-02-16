@@ -12,6 +12,11 @@
     --ui-bg-accented: rgba(0, 0, 0, 0.3);
 }
 
+/* Ensures ContentSearch dialog has a black background in dark mode, overriding the default styles */
+body > div[data-slot="content"][role="dialog"] {
+    background-color: #000000 !important;
+}
+
 /* Used to keep the vanta.js background in place and overwrite the built-in position: absolute; */
 .vanta-canvas {
     position: fixed !important;

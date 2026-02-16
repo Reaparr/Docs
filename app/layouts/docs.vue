@@ -21,8 +21,6 @@
         </UPage>
       </UContainer>
     </UMain>
-
-    <AppFooter />
   </div>
 </template>
 

@@ -21,7 +21,13 @@ export default defineNuxtConfig({
         { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
       ],
       noscript: [{ textContent: 'JavaScript is required' }],
-      meta: [{ name: 'description', content: 'Documentation website for the Reaparr project' }, { name: 'color-scheme', content: 'dark' }],
+      meta: [
+        {
+          name: 'description',
+          content: 'Documentation website for the Reaparr project',
+        },
+        { name: 'color-scheme', content: 'dark' },
+      ],
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     },
   },
@@ -83,5 +89,8 @@ export default defineNuxtConfig({
       new URL('./app/types/interfaces/', import.meta.url),
     ),
     '@components': fileURLToPath(new URL('./app/components/', import.meta.url)),
+    '@composables': fileURLToPath(
+      new URL('./app/composables/', import.meta.url),
+    ),
   },
 });
