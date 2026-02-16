@@ -1,28 +1,34 @@
 <template>
   <div>
-    <template v-if="page">
-      <UPageHero
-        :title="page.title"
-        :description="page.description"
-        :links="page.hero.links"
-        :ui="pageHeroUi">
-        <template #top>
-          <HeroBackground />
-        </template>
+    <UPageHero
+      :title="title"
+      :description="description"
+      :links="[
+        {
+          label: 'Get Started',
+          to: '/docs/getting-started',
+          size: 'lg',
+          icon: 'i-lucide-arrow-right',
+          trailing: true,
+        },
+      ]"
+      :ui="pageHeroUi">
+      <template #top>
+        <HeroBackground />
+      </template>
 
-        <template #title>
-          <div class="flex flex-col items-center justify-center">
-            <ReaparrLogo
-              :size="128"
-              class="my-2" />
-            <ReaparrLogoTitle :height="100" />
-          </div>
-        </template>
-        <ScreenshotsMarquee />
+      <template #title>
+        <div class="flex flex-col items-center justify-center">
+          <ReaparrLogo
+            :size="128"
+            class="my-2" />
+          <ReaparrLogoTitle :height="100" />
+        </div>
+      </template>
+      <ScreenshotsMarquee />
 
-        <LazyStarsBg />
-      </UPageHero>
-    </template>
+      <LazyStarsBg />
+    </UPageHero>
 
     <USeparator label="Features" />
 
@@ -273,10 +279,6 @@
 <script setup lang="ts">
 import type { IScreenshot } from '@interfaces';
 
-const { data: page } = await useAsyncData('index', () =>
-  queryCollection('index').first(),
-);
-
 const pageHeroUi = {
   container: 'flex flex-col lg:grid py-10 sm:py-14 lg:py-18 gap-8 sm:gap-y-12',
 };
@@ -287,8 +289,9 @@ const pageSectionUi = {
   },
 };
 
-const title = page.value?.seo?.title || page.value?.title;
-const description = page.value?.seo?.description || page.value?.description;
+const title = 'Reaparr';
+const description
+  = 'Plex downloader that brings content from any server to yours!';
 
 useSeoMeta({
   titleTemplate: '',
