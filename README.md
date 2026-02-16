@@ -4,31 +4,22 @@ The documentation website for [Reaparr](https://github.com/Reaparr/Reaparr).
 
 Hosted on https://www.reaparr.rocks/
 
-# Created with Nuxt Content v2
-
-Look at the [Content documentation](https://content-v2.nuxtjs.org/) to learn more.
+## Contributing
 
 ## Setup
 
 Make sure to install the dependencies:
 
 ```bash
-# yarn
-yarn install
-
-# npm
-npm install
-
-# pnpm
-pnpm install --shamefully-hoist
+bun install
 ```
 
 ## Development Server
 
-Start the development server on http://localhost:3000
+Start the development server on http://localhost:4000
 
 ```bash
-npm run dev
+bun run dev
 ```
 
 ## Production
@@ -36,13 +27,13 @@ npm run dev
 Build the application for production:
 
 ```bash
-npm run build
+bun run generate
 ```
 
 Locally preview production build:
 
 ```bash
-npm run preview
+bun run preview
 ```
 
 Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
