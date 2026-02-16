@@ -93,4 +93,8 @@ export const screenshots: IScreenshot[] = [
     text: 'Settings – user interface customization overview',
     src: '/img/screenshots/demo-5-settings-ui-overview.png',
   },
+  {
+    text: 'Settings – language select and other general settings overview',
+    src: '/img/screenshots/demo-5-settings-ui-language-select.jpeg',
+  },
 ];
