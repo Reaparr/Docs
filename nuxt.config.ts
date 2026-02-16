@@ -1,4 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import { fileURLToPath } from 'url';
+
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
@@ -74,5 +76,12 @@ export default defineNuxtConfig({
         quoteProps: 'as-needed',
       },
     },
+  },
+
+  alias: {
+    '@interfaces': fileURLToPath(
+      new URL('./app/types/interfaces/', import.meta.url),
+    ),
+    '@components': fileURLToPath(new URL('./app/components/', import.meta.url)),
   },
 });
