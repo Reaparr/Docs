@@ -36,16 +36,16 @@ export const useNavigation = () => {
     },
   ]);
 
-  const footerLinks = computed<NavigationItem[]>(() => [
+  const footerLinks = [
     {
       label: 'Docs',
       icon: 'i-lucide-book',
       to: '/docs/getting-started',
     },
     {
-      label: 'Pricing',
-      icon: 'i-lucide-credit-card',
-      to: '/pricing',
+      label: 'Screenshots',
+      icon: 'i-lucide-image',
+      to: '/screenshots',
     },
     {
       label: 'Changelog',
@@ -54,10 +54,15 @@ export const useNavigation = () => {
     },
     {
       label: 'Credits',
-      icon: 'i-lucide-history',
+      icon: 'i-lucide-heart',
       to: '/credits',
     },
-  ]);
+    {
+      label: 'Donate',
+      icon: 'i-lucide-hand-coins',
+      to: '/donate',
+    },
+  ];
 
   return {
     headerItems,

@@ -11,7 +11,8 @@
 
     <UNavigationMenu
       :items="items"
-      variant="link" />
+      orientation="horizontal"
+      variant="pill" />
 
     <template #right>
       <ClientOnly>
@@ -53,6 +54,19 @@
           <UIcon name="mdi:github" />
           Docs
         </UButton>
+        <!-- Background Toggle -->
+        <UTooltip
+          :text="
+            isAnimated
+              ? 'Switch to static background'
+              : 'Switch to animated background'
+          ">
+          <UButton
+            class="mx-2"
+            variant="outline"
+            :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
+            @click="toggle" />
+        </UTooltip>
       </ClientOnly>
     </template>
   </UHeader>
@@ -60,4 +74,5 @@
 
 <script setup lang="ts">
 const { headerItems: items } = useNavigation();
+const { isAnimated, toggle } = useBackgroundEffect();
 </script>

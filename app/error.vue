@@ -53,17 +53,5 @@ const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSe
   server: false,
 });
 
-const links = [{
-  label: 'Docs',
-  icon: 'i-lucide-book',
-  to: '/docs/getting-started',
-}, {
-  label: 'Pricing',
-  icon: 'i-lucide-credit-card',
-  to: '/pricing',
-}, {
-  label: 'Blog',
-  icon: 'i-lucide-pencil',
-  to: '/blog',
-}];
+const { footerLinks: links } = useNavigation();
 </script>
