@@ -189,12 +189,12 @@
           },
         ]">
         <NuxtImg
-          src="/img/screenshots/demo-5-settings-ui-overview.png"
+          src="/img/screenshots/demo-5-settings-ui-language-select.jpeg"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="UI language settings"
           @click="
             openModal({
-              src: '/img/screenshots/demo-5-settings-ui-overview.png',
+              src: '/img/screenshots/demo-5-settings-ui-language-select.jpeg',
               text: 'UI language settings',
             })
           " />

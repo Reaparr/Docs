@@ -15,59 +15,57 @@
       variant="pill" />
 
     <template #right>
-      <ClientOnly>
-        <!-- Github Reaparr Link -->
-        <UButton
-          as="a"
-          class="mx-2"
-          href="https://discord.com/invite/Qa3BtxN77g"
-          rel="noopener"
-          variant="outline"
-          icon=""
-          target="_blank">
-          <UIcon name="simple-icons:discord" />
+      <!-- Github Reaparr Link -->
+      <UButton
+        as="a"
+        class="mx-2"
+        href="https://discord.com/invite/Qa3BtxN77g"
+        rel="noopener"
+        variant="outline"
+        icon=""
+        target="_blank">
+        <UIcon name="simple-icons:discord" />
 
-          Discord
-        </UButton>
+        Discord
+      </UButton>
 
-        <UButton
-          as="a"
-          class="mx-2"
-          href="https://github.com/Reaparr/Reaparr"
-          icon=""
-          rel="noopener"
-          variant="outline"
-          target="_blank">
-          <UIcon name="mdi:github" />
-          Reaparr
-        </UButton>
+      <UButton
+        as="a"
+        class="mx-2"
+        href="https://github.com/Reaparr/Reaparr"
+        icon=""
+        rel="noopener"
+        variant="outline"
+        target="_blank">
+        <UIcon name="mdi:github" />
+        Reaparr
+      </UButton>
 
-        <!-- Github Docs Link -->
+      <!-- Github Docs Link -->
+      <UButton
+        as="a"
+        class="mx-2"
+        href="https://github.com/Reaparr/Docs"
+        icon=""
+        variant="outline"
+        rel="noopener"
+        target="_blank">
+        <UIcon name="mdi:github" />
+        Docs
+      </UButton>
+      <!-- Background Toggle -->
+      <UTooltip
+        :text="
+          isAnimated
+            ? 'Switch to static background'
+            : 'Switch to animated background'
+        ">
         <UButton
-          as="a"
           class="mx-2"
-          href="https://github.com/Reaparr/Docs"
-          icon=""
           variant="outline"
-          rel="noopener"
-          target="_blank">
-          <UIcon name="mdi:github" />
-          Docs
-        </UButton>
-        <!-- Background Toggle -->
-        <UTooltip
-          :text="
-            isAnimated
-              ? 'Switch to static background'
-              : 'Switch to animated background'
-          ">
-          <UButton
-            class="mx-2"
-            variant="outline"
-            :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
-            @click="toggle" />
-        </UTooltip>
-      </ClientOnly>
+          :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
+          @click="toggle" />
+      </UTooltip>
     </template>
   </UHeader>
 </template>
