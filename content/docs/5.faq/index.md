@@ -237,7 +237,7 @@ items:
 ---
 
 #how-to-help
-Check the [Contributing page](/contributing/overview) to see what you can do to help!
+Check the [Contributing page](/docs/contributing/overview) to see what you can do to help!
 
 #appreciation
 The rising number of GitHub stars, docker pulls and users going out of their way to make bug reports and give feedback is already the biggest honor for me.

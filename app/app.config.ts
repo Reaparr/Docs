@@ -20,5 +20,13 @@ export default defineAppConfig({
         modal: 'z-99', // Ensure the search modal appears above UI
       },
     },
+    prose: {
+      img: {
+        slots: {
+          overlay: 'z-[200]',
+          content: 'z-[201]',
+        },
+      },
+    },
   },
 });
