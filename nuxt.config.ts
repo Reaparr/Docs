@@ -11,6 +11,7 @@ export default defineNuxtConfig({
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
+      title: 'Reaparr Docs',
       script: [
         {
           src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
@@ -18,6 +19,8 @@ export default defineNuxtConfig({
         { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
       ],
       noscript: [{ textContent: 'JavaScript is required' }],
+      meta: [{ name: 'color-scheme', content: 'dark' }],
+      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     },
   },
   devtools: {
