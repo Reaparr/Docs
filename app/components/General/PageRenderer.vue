@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ParsedContent } from '@nuxt/content';
+import type { ParsedContentv2 as ParsedContent } from '@nuxt/content';
 
 defineProps<{ page: ParsedContent }>();
 </script>

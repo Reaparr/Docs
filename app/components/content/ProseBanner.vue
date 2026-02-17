@@ -9,6 +9,6 @@
 defineProps<{
   to?: string;
   title?: string;
-  color?: string;
+  color?: 'error' | 'primary' | 'secondary' | 'success' | 'info' | 'warning' | 'neutral';
 }>();
 </script>

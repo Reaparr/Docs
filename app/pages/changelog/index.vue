@@ -106,8 +106,7 @@ const { data: versions } = await useFetch(
         tag_name: string;
         published_at: string;
         body: string;
-        releaseUrl: string;
-        release: string;
+        html_url: string;
       }>,
     ) => {
       return data.map((release) => ({

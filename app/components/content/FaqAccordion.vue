@@ -94,7 +94,9 @@ const hasHashItem = (hash: string) => {
 };
 
 // Handle accordion changes and update URL hash
-function onAccordionChange(value: string | string[]) {
+function onAccordionChange(value: string | string[] | undefined) {
+  if (value === undefined)
+    return;
   // Convert to array if needed
   const values = Array.isArray(value) ? value : [value];
 
