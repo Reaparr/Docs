@@ -17,11 +17,6 @@ body > div[data-slot="content"][role="dialog"] {
     background-color: #000000 !important;
 }
 
-/* Used to keep the vanta.js background in place and overwrite the built-in position: absolute; */
-.vanta-canvas {
-    position: fixed !important;
-}
-
 /* Ensure tooltips render above the header */
 [data-reka-popper-content-wrapper] {
     z-index: 9999 !important;

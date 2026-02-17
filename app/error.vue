@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <UApp>
+    <Background />
     <AppHeader />
 
     <UMain>
@@ -21,7 +22,7 @@
     </ClientOnly>
 
     <UToaster />
-  </div>
+  </UApp>
 </template>
 
 <script setup lang="ts">

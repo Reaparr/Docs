@@ -1,5 +1,6 @@
 <template>
-  <div>
+  <UApp>
+    <Background />
     <AppHeader />
 
     <UMain>
@@ -21,11 +22,16 @@
         </UPage>
       </UContainer>
     </UMain>
-  </div>
+  </UApp>
 </template>
 
 <script setup lang="ts">
-import type { ContentNavigationItem } from '@nuxt/content';
-
-const navigation = inject<Ref<ContentNavigationItem[]>>('navigation');
+const { data: navigation } = await useAsyncData(
+  'navigation',
+  () => queryCollectionNavigation('docs'),
+  {
+    transform: (data) =>
+      data.find((item) => item.path === '/docs')?.children || [],
+  },
+);
 </script>

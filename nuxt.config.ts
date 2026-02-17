@@ -26,7 +26,7 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Documentation website for the Reaparr project',
         },
-        { name: 'color-scheme', content: 'dark' },
+        { name: 'color-scheme', content: 'dark only' },
       ],
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     },
@@ -53,6 +53,13 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/docs': { redirect: '/docs/getting-started', prerender: false },
+  },
+
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classPrefix: '',
+    classSuffix: '',
   },
 
   compatibilityDate: '2024-07-11',

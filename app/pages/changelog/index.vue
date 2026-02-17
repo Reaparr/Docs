@@ -43,8 +43,6 @@
     </UPageSection>
 
     <section class="px-4 sm:px-6 xl:px-0 xl:-ms-30 xl:flex-1">
-      <UColorModeButton class="fixed top-4 right-4 z-10" />
-
       <UChangelogVersions
         as="main"
         :indicator-motion="false"
