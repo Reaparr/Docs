@@ -110,7 +110,6 @@ export default defineNuxtConfig({
       crawlLinks: true,
     },
   },
-
   eslint: {
     config: {
       stylistic: {
@@ -143,6 +142,9 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['avif', 'webp'],
-    provider: 'ipxStatic',
+    provider: process.env.NODE_ENV === 'production' ? 'ipxStatic' : 'ipx',
+  },
+  sitemap: {
+    exclude: ['/_ipx/**'],
   },
 });

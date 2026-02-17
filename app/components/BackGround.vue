@@ -2,15 +2,6 @@
   <div id="vanta-bg" />
 </template>
 
-<script setup lang="ts">
-import { useBackgroundEffect } from '@composables';
-
-onBeforeMount(() => {
-  const { toggle } = useBackgroundEffect();
-  toggle();
-});
-</script>
-
 <style>
 /* Used to keep the vanta.js background in place and overwrite the built-in position: absolute; */
 #vanta-bg {

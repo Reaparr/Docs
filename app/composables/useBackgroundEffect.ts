@@ -19,7 +19,7 @@ export function useBackgroundEffect() {
         destroyBackgroundEffect();
       } else {
         log('Toggle → creating effect');
-        setupBackgroundEffect();
+        activateBackgroundEffect();
       }
     } catch (err) {
       logError('Toggle failed', err);
@@ -29,7 +29,11 @@ export function useBackgroundEffect() {
   return { isAnimated, toggle };
 }
 
-export function setupBackgroundEffect(): void {
+export function activateBackgroundEffect(): void {
+  if (_isAnimated.value) {
+    log('Activate skipped (effect already active)');
+  }
+
   try {
     if (typeof window === 'undefined' || typeof document === 'undefined') {
       log('Setup skipped (SSR environment)');
@@ -47,8 +51,7 @@ export function setupBackgroundEffect(): void {
     }
 
     const canvas = document.createElement('canvas');
-    const gl
-      = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
 
     if (!(gl instanceof WebGLRenderingContext)) {
       log('Setup aborted (WebGL not supported)');
