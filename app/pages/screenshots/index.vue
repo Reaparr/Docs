@@ -12,17 +12,16 @@
       <template #default="{ item }">
         <div
           class="relative w-full cursor-zoom-in"
-          @click="openModal(item as IScreenshot)">
+          @click="openModal(item)">
           <NuxtImg
-            :src="(item as IScreenshot).src"
+            :src="item.src"
             width="1280"
             height="720"
             class="w-full h-auto rounded-lg object-contain"
-            :alt="(item as IScreenshot).text" />
-          <div
-            class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/50 px-4 py-2">
+            :alt="item.text" />
+          <div class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/50 px-4 py-2">
             <p class="text-white text-sm text-center">
-              {{ (item as IScreenshot).text }}
+              {{ item.text }}
             </p>
           </div>
         </div>
@@ -34,17 +33,13 @@
         v-for="(item, index) in screenshots"
         :key="index"
         class="size-14 cursor-pointer rounded-lg ring-2 ring-transparent transition-all hover:ring-red-500 hover:shadow-[0_0_8px_2px_rgba(239,68,68,0.7)]"
-        :class="
-          activeIndex === index
-            ? 'ring-red-500 shadow-[0_0_8px_2px_rgba(239,68,68,0.7)] animate-pulse-ring'
-            : ''
-        "
+        :class="activeIndex === index ? 'ring-red-500 shadow-[0_0_8px_2px_rgba(239,68,68,0.7)] animate-pulse-ring' : ''"
         @click="select(index)">
         <NuxtImg
           :src="item.src"
           width="56"
           height="56"
-          :alt="(item as IScreenshot).text"
+          :alt="item.text"
           class="rounded-lg w-full h-full object-cover" />
       </div>
     </div>
@@ -58,9 +53,10 @@
           <NuxtImg
             :src="selectedImage?.src"
             :alt="selectedImage?.text"
+            width="2560"
+            height="1440"
             class="w-full h-auto rounded-lg object-contain" />
-          <div
-            class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
+          <div class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
             <p class="text-white text-sm text-center">
               {{ selectedImage?.text }}
             </p>
@@ -103,16 +99,16 @@ function openModal(item: IScreenshot) {
 
 <style scoped>
 @keyframes pulse-ring {
-  0%,
-  100% {
-    box-shadow: 0 0 4px 4px rgba(239, 68, 68, 1);
-  }
-  50% {
-    box-shadow: 0 0 4px 2px rgba(239, 68, 68, 0.6);
-  }
+	0%,
+	100% {
+		box-shadow: 0 0 4px 4px rgba(239, 68, 68, 1);
+	}
+	50% {
+		box-shadow: 0 0 4px 2px rgba(239, 68, 68, 0.6);
+	}
 }
 
 .animate-pulse-ring {
-  animation: pulse-ring 1.5s ease-in-out infinite;
+	animation: pulse-ring 1.5s ease-in-out infinite;
 }
 </style>

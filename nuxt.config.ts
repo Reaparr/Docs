@@ -142,7 +142,7 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['avif', 'webp'],
-    provider: process.env.NODE_ENV === 'production' ? 'ipxStatic' : 'ipx',
+    provider: process.env.NODE_ENV === 'production' ? 'ipxStatic' : 'none',
   },
   sitemap: {
     exclude: ['/_ipx/**'],

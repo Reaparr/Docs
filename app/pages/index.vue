@@ -43,20 +43,17 @@
         :features="[
           {
             title: 'Poster & table views',
-            description:
-              'Switch between a visual poster grid and a detailed table layout instantly.',
+            description: 'Switch between a visual poster grid and a detailed table layout instantly.',
             icon: 'i-lucide-layout-grid',
           },
           {
             title: 'Powerful filter & sort',
-            description:
-              'Slice your library by genre, year, quality, country and more.',
+            description: 'Slice your library by genre, year, quality, country and more.',
             icon: 'i-lucide-list-filter',
           },
           {
             title: 'Download to anywhere',
-            description:
-              'Pick the destination folder per item — full control over where files land.',
+            description: 'Pick the destination folder per item — full control over where files land.',
             icon: 'i-lucide-hard-drive-download',
           },
         ]">
@@ -150,14 +147,12 @@
         :features="[
           {
             title: 'Easy to setup',
-            description:
-              'Point Reaparr to your Sonarr/Radarr instance and it will configure itself.',
+            description: 'Point Reaparr to your Sonarr/Radarr instance and it will configure itself.',
             icon: 'i-lucide-sparkles',
           },
           {
             title: 'Media source for Sonarr/Radarr',
-            description:
-              'Acts as a source for media in Sonarr/Radarr, no more needing Torrents or Usenet indexers.',
+            description: 'Acts as a source for media in Sonarr/Radarr, no more needing Torrents or Usenet indexers.',
             icon: 'i-lucide-database',
           },
         ]">
@@ -218,14 +213,12 @@
         :features="[
           {
             title: 'Setup wizard',
-            description:
-              'Easy setup wizard to get you up and running in minutes.',
+            description: 'Easy setup wizard to get you up and running in minutes.',
             icon: 'i-lucide-terminal',
           },
           {
             title: 'Platform agnostic',
-            description:
-              'Windows, Linux, macOS, Unraid, Synology — all supported.',
+            description: 'Windows, Linux, macOS, Unraid, Synology — all supported.',
             icon: 'i-lucide-globe',
           },
         ]">
@@ -254,9 +247,10 @@
             <NuxtImg
               :src="selectedImage?.src"
               :alt="selectedImage?.text"
+              width="2560"
+              height="1440"
               class="w-full h-auto rounded-lg object-contain" />
-            <div
-              class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
+            <div class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
               <p class="text-white text-sm text-center">
                 {{ selectedImage?.text }}
               </p>
@@ -308,8 +302,7 @@ const pageSectionUiReverse = {
 };
 
 const title = 'Reaparr';
-const description
-  = 'Plex downloader that brings content from any server to yours!';
+const description = 'Plex downloader that brings content from any server to yours!';
 
 useSeoMeta({
   titleTemplate: '',
@@ -332,10 +325,7 @@ useHead({
         name: 'Reaparr',
         url: 'https://reaparr.rocks',
         logo: 'https://reaparr.rocks/favicon.svg',
-        sameAs: [
-          'https://github.com/Reaparr/Reaparr',
-          'https://discord.com/invite/Qa3BtxN77g',
-        ],
+        sameAs: ['https://github.com/Reaparr/Reaparr', 'https://discord.com/invite/Qa3BtxN77g'],
       }),
     },
   ],
