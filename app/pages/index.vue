@@ -62,6 +62,8 @@
         ]">
         <NuxtImg
           src="/img/screenshots/demo-3-movies-library-1-poster-table.avif"
+          width="800"
+          height="450"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Movies library poster view"
           @click="
@@ -93,6 +95,9 @@
         ]">
         <NuxtImg
           src="/img/screenshots/demo-7-download-screen.avif"
+          width="800"
+          height="450"
+
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Download screen"
           @click="
@@ -124,6 +129,9 @@
         ]">
         <NuxtImg
           src="/img/screenshots/demo-5-settings-account-overview.avif"
+          width="800"
+          height="450"
+
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Account settings"
           @click="
@@ -157,6 +165,8 @@
         ]">
         <NuxtImg
           src="/img/screenshots/demo-5-settings-integration-overview.avif"
+          width="800"
+          height="450"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Integration settings"
           @click="
@@ -188,6 +198,8 @@
         ]">
         <NuxtImg
           src="/img/screenshots/demo-5-settings-ui-language-select.avif"
+          width="800"
+          height="450"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="UI language settings"
           @click="
@@ -221,6 +233,8 @@
         ]">
         <NuxtImg
           src="/img/screenshots/demo-2-setup-1.avif"
+          width="800"
+          height="450"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Setup screen"
           @click="

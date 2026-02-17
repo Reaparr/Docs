@@ -2,7 +2,7 @@
   <NuxtImg
     :height="size"
     :width="size"
-    :src="'https://raw.githubusercontent.com/Reaparr/Reaparr/dev/export/reaparr/logo/reaparr-full.svg'"
+    src="/img/logo/reaparr-full-512.png"
     alt="Reaparr Docs Logo" />
 </template>
 

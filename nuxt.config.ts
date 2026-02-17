@@ -10,18 +10,6 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/sitemap',
   ],
-
-  icon: {
-    serverBundle: {
-      collections: ['lucide', 'mdi', 'simple-icons'],
-    },
-    clientBundle: {
-      scan: true,
-      sizeLimitKb: 512,
-    },
-    fallbackToApi: false,
-    fetchTimeout: 0,
-  },
   /*
    ** Auto-import components
    *  Doc: https://github.com/nuxt/components
@@ -74,7 +62,10 @@ export default defineNuxtConfig({
           name: 'twitter:description',
           content: 'Documentation website for the Reaparr project',
         },
-        { name: 'twitter:image', content: 'https://reaparr.rocks/og-image.png' },
+        {
+          name: 'twitter:image',
+          content: 'https://reaparr.rocks/og-image.png',
+        },
       ],
       link: [
         { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
@@ -142,5 +133,24 @@ export default defineNuxtConfig({
         quoteProps: 'as-needed',
       },
     },
+  },
+
+  icon: {
+    serverBundle: {
+      collections: ['lucide', 'mdi', 'simple-icons'],
+    },
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 512,
+    },
+    fallbackToApi: false,
+    fetchTimeout: 0,
+  },
+  /*
+   ** Nuxt Image module configuration
+   */
+  image: {
+    quality: 80,
+    format: ['avif', 'webp'],
   },
 });
