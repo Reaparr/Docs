@@ -44,7 +44,6 @@
           :src="item.src"
           width="56"
           height="56"
-          loading="lazy"
           :alt="(item as IScreenshot).text"
           class="rounded-lg w-full h-full object-cover" />
       </div>
