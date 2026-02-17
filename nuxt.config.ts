@@ -1,7 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'url';
-import { readFile, writeFile } from 'node:fs/promises';
-import { resolve } from 'node:path';
 
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxt/content', '@vueuse/nuxt', '@nuxtjs/sitemap'],
@@ -105,24 +103,14 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'aws-amplify',
     awsAmplify: {
+      imageSettings: {
+        formats: ['image/avif', 'image/webp'],
+      },
       runtime: 'nodejs20.x',
     },
     prerender: {
       routes: ['/'],
       crawlLinks: true,
-    },
-  },
-
-  hooks: {
-    async 'nitro:build:public-assets'(nitro) {
-      const manifestPath = resolve(nitro.options.output.dir, 'deploy-manifest.json');
-      const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-      const ipxRoute = { path: '/_ipx/*', target: { kind: 'Compute', src: 'default' } };
-      const insertAt = manifest.routes.findIndex((r: { path: string }) => r.path === '/*.*');
-      if (insertAt !== -1) {
-        manifest.routes.splice(insertAt, 0, ipxRoute);
-      }
-      await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
     },
   },
 
