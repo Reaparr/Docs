@@ -96,7 +96,7 @@ Make sure that the "Allow username to be used when signing in" is checked.
 3. Click on the username and the below option will appear
 4. Make sure it's checked and then click "Save Changes"
 
-![Username Plex Question](/img/faq/username-plex-question.png){.responsive-img}
+![Username Plex Question](/img/faq/username-plex-question.avif)
 
 #auth-token
 Use Plex's official method:
