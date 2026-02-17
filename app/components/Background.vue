@@ -5,17 +5,6 @@
 <script setup lang="ts">
 import { useBackgroundEffect } from '@composables';
 
-useHead({
-  link: [
-    {
-      rel: 'preload',
-      as: 'image',
-      href: '/img/background/background.avif',
-      type: 'image/avif',
-    },
-  ],
-});
-
 onBeforeMount(() => {
   const { toggle } = useBackgroundEffect();
   toggle();

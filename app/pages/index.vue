@@ -305,6 +305,28 @@ useSeoMeta({
   ogTitle: title,
   description,
   ogDescription: description,
+  ogImage: 'https://reaparr.rocks/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://reaparr.rocks/og-image.png',
+});
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Organization',
+        name: 'Reaparr',
+        url: 'https://reaparr.rocks',
+        logo: 'https://reaparr.rocks/favicon.svg',
+        sameAs: [
+          'https://github.com/Reaparr/Reaparr',
+          'https://discord.com/invite/Qa3BtxN77g',
+        ],
+      }),
+    },
+  ],
 });
 
 const modalOpen = ref(false);

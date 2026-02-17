@@ -41,6 +41,11 @@ export function setupBackgroundEffect(): void {
       return;
     }
 
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      log('Setup aborted (prefers-reduced-motion)');
+      return;
+    }
+
     const canvas = document.createElement('canvas');
     const gl
       = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');

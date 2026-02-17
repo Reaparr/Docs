@@ -21,5 +21,8 @@ useSeoMeta({
   ogTitle: title,
   description,
   ogDescription: description,
+  ogImage: 'https://reaparr.rocks/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://reaparr.rocks/og-image.png',
 });
 </script>

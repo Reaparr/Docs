@@ -78,5 +78,40 @@ useSeoMeta({
   ogTitle: title,
   description,
   ogDescription: description,
+  ogImage: 'https://reaparr.rocks/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://reaparr.rocks/og-image.png',
+});
+
+const isFaqPage = route.path === '/docs/faq';
+
+useHead({
+  script: [
+    {
+      type: 'application/ld+json',
+      innerHTML: JSON.stringify(
+        isFaqPage
+          ? {
+              '@context': 'https://schema.org',
+              '@type': 'FAQPage',
+              name: title,
+              description,
+              url: `https://reaparr.rocks${route.path}`,
+            }
+          : {
+              '@context': 'https://schema.org',
+              '@type': 'TechArticle',
+              headline: title,
+              description,
+              url: `https://reaparr.rocks${route.path}`,
+              isPartOf: {
+                '@type': 'WebSite',
+                name: 'Reaparr Docs',
+                url: 'https://reaparr.rocks',
+              },
+            },
+      ),
+    },
+  ],
 });
 </script>

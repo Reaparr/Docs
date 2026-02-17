@@ -87,6 +87,16 @@
 </template>
 
 <script setup lang="ts">
+useSeoMeta({
+  title: 'Changelog',
+  ogTitle: 'Changelog | Reaparr Docs',
+  description: 'Browse the latest Reaparr releases and updates.',
+  ogDescription: 'Browse the latest Reaparr releases and updates.',
+  ogImage: 'https://reaparr.rocks/og-image.png',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://reaparr.rocks/og-image.png',
+});
+
 const { data: versions } = await useFetch(
   'https://api.github.com/repos/Reaparr/Reaparr/releases',
   {

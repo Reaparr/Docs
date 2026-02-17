@@ -1,6 +1,9 @@
 ---
 title: Getting started
 description: This guide will help you get Reaparr up and running on your system. Follow the instructions for your platform to install and configure Reaparr, and start downloading media from your Plex servers in no time!
+seo:
+  title: Getting Started with Reaparr | Reaparr Docs
+  description: Install and configure Reaparr on Docker, Unraid, Windows, macOS, or Synology. Start downloading media from Plex servers in minutes.
 ---
 
 ## Reaparr variants

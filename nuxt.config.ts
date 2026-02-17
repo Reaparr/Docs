@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
+    '@nuxtjs/sitemap',
   ],
   /*
    ** Auto-import components
@@ -31,11 +32,16 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
       title: 'Reaparr Docs',
+      titleTemplate: '%s | Reaparr Docs',
       script: [
         {
           src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+          defer: true,
         },
-        { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
+        {
+          src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js',
+          defer: true,
+        },
       ],
       noscript: [{ textContent: 'JavaScript is required' }],
       meta: [
@@ -44,11 +50,37 @@ export default defineNuxtConfig({
           content: 'Documentation website for the Reaparr project',
         },
         { name: 'color-scheme', content: 'dark only' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Reaparr Docs' },
+        {
+          property: 'og:description',
+          content: 'Documentation website for the Reaparr project',
+        },
+        { property: 'og:image', content: 'https://reaparr.rocks/og-image.png' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        {
+          name: 'twitter:description',
+          content: 'Documentation website for the Reaparr project',
+        },
+        { name: 'twitter:image', content: 'https://reaparr.rocks/og-image.png' },
       ],
-      link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/img/background/background.avif',
+          type: 'image/avif',
+        },
+      ],
     },
   },
   css: ['~/assets/css/main.css'],
+
+  site: {
+    url: 'https://reaparr.rocks',
+    name: 'Reaparr Docs',
+  },
 
   colorMode: {
     preference: 'dark',

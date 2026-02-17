@@ -26,6 +26,7 @@
         rel="noopener"
         variant="outline"
         icon=""
+        aria-label="Join our Discord"
         target="_blank">
         <UIcon name="simple-icons:discord" />
         <span class="hidden xl:inline">Discord</span>
@@ -38,6 +39,7 @@
         icon=""
         rel="noopener"
         variant="outline"
+        aria-label="Reaparr on GitHub"
         target="_blank">
         <UIcon name="mdi:github" />
         <span class="hidden xl:inline">Reaparr</span>
@@ -51,6 +53,7 @@
         icon=""
         variant="outline"
         rel="noopener"
+        aria-label="Reaparr Docs on GitHub"
         target="_blank">
         <UIcon name="mdi:github" />
         <span class="hidden xl:inline">Docs</span>
@@ -66,9 +69,10 @@
               : 'Switch to animated background'
           ">
           <UButton
-            class="mx-1"
+            class="mx-1 cursor-pointer"
             variant="outline"
             :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
+            :aria-label="isAnimated ? 'Switch to static background' : 'Switch to animated background'"
             @click="toggle" />
         </UTooltip>
       </ClientOnly>
