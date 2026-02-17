@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.91",
+    "@iconify-json/mdi": "^1.2.3",
     "@iconify-json/simple-icons": "^1.2.71",
     "@nuxt/content": "^3.11.2",
     "@nuxt/image": "^2.0.0",

@@ -10,6 +10,18 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/sitemap',
   ],
+
+  icon: {
+    serverBundle: {
+      collections: ['lucide', 'mdi', 'simple-icons'],
+    },
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 512,
+    },
+    fallbackToApi: false,
+    fetchTimeout: 0,
+  },
   /*
    ** Auto-import components
    *  Doc: https://github.com/nuxt/components
