@@ -2,18 +2,11 @@
 import { fileURLToPath } from 'url';
 
 export default defineNuxtConfig({
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxt/content',
-    '@vueuse/nuxt',
-    '@nuxtjs/sitemap',
-  ],
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxt/content', '@vueuse/nuxt', '@nuxtjs/sitemap'],
   /*
-   ** Auto-import components
-   *  Doc: https://github.com/nuxt/components
-   */
+	 ** Auto-import components
+	 *  Doc: https://github.com/nuxt/components
+	 */
   components: {
     loader: true,
     dirs: [
@@ -41,6 +34,9 @@ export default defineNuxtConfig({
         {
           src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js',
           defer: true,
+        },
+        {
+          innerHTML: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vixss7ubk1");`,
         },
       ],
       noscript: [{ textContent: 'JavaScript is required' }],
@@ -93,13 +89,9 @@ export default defineNuxtConfig({
   },
 
   alias: {
-    '@interfaces': fileURLToPath(
-      new URL('./app/types/interfaces/', import.meta.url),
-    ),
+    '@interfaces': fileURLToPath(new URL('./app/types/interfaces/', import.meta.url)),
     '@components': fileURLToPath(new URL('./app/components/', import.meta.url)),
-    '@composables': fileURLToPath(
-      new URL('./app/composables/', import.meta.url),
-    ),
+    '@composables': fileURLToPath(new URL('./app/composables/', import.meta.url)),
   },
 
   routeRules: {
@@ -147,8 +139,8 @@ export default defineNuxtConfig({
     fetchTimeout: 0,
   },
   /*
-   ** Nuxt Image module configuration
-   */
+	 ** Nuxt Image module configuration
+	 */
   image: {
     quality: 80,
     format: ['avif', 'webp'],
