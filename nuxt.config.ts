@@ -104,6 +104,15 @@ export default defineNuxtConfig({
     preset: 'aws-amplify',
     awsAmplify: {
       runtime: 'nodejs20.x',
+      imageOptimization: { path: '/_amplify/image' },
+      imageSettings: {
+        sizes: [320, 640, 768, 1024, 1280, 1600, 1920],
+        formats: ['image/avif', 'image/webp'],
+        minimumCacheTTL: 86400,
+        domains: [],
+        remotePatterns: [],
+        dangerouslyAllowSVG: false,
+      },
     },
     prerender: {
       routes: ['/'],
@@ -143,5 +152,6 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['avif', 'webp'],
+    provider: 'awsAmplify',
   },
 });
