@@ -43,4 +43,13 @@ const { data: navigation } = await useAsyncData(
       data.find((item) => item.path === '/docs')?.children || [],
   },
 );
+const { data: files } = useLazyAsyncData(
+  'search',
+  () => queryCollectionSearchSections('docs'),
+  {
+    server: false,
+  },
+);
+
+const { footerLinks: links } = useNavigation();
 </script>

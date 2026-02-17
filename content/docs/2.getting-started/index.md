@@ -1,10 +1,7 @@
 ---
 title: Getting started
+description: This guide will help you get Reaparr up and running on your system. Follow the instructions for your platform to install and configure Reaparr, and start downloading media from your Plex servers in no time!
 ---
-
-# Getting started
-
-Reaparr is a cross-platform media downloader that indexes Plex servers you have access to and lets you download media directly into your own collection — fully automated, like Radarr and Sonarr.
 
 ## Reaparr variants
 

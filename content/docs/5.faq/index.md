@@ -1,8 +1,7 @@
 ---
 title: Frequently Asked Questions
+description: Find answers to common questions about Reaparr, including installation, Plex account setup, troubleshooting, and how to support the project. If you have a question that isn't answered here, please check the documentation or ask in the community.
 ---
-
-# Frequently Asked Questions
 
 ## Getting Started
 

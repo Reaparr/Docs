@@ -1,12 +1,13 @@
 ---
 title: Reaparr Setup
+description: After installing Reaparr, you can access the web interface and complete the initial setup to connect your Plex account and configure your download settings. Follow this guide to set up Reaparr.
 ---
 
-# Reaparr Setup
+After installing Reaparr, you can access the web interface by navigating to [http://localhost:7000](http://localhost:7000) in your web browser (replace `localhost` with your server's IP address if not running locally) and the port you configured during installation.
 
-After installing Reaparr, you can access the web interface by navigating to `http://localhost:7000` in your web browser (replace `localhost` with your server's IP address if not running locally) and the port you configured during installation.
 
-## Initial Configuration
+
+## First time login
 The first time you access the web interface, you will be prompted to login with the default credentials.
 
 Username: 
@@ -22,7 +23,7 @@ R€Aℙℙ@rr69
 
 ::prose-warning
 ---
-description: "Change the default password immediately after logging in for security reasons!"
+description: "Change the default password immediately after logging in for hopefully very obvious reasons!"
 ---
 ::
 

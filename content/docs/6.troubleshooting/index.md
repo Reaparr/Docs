@@ -3,8 +3,6 @@ title: Troubleshooting
 description: Step-by-step guide to debug and resolve common issues with Reaparr
 ---
 
-# Troubleshooting
-
 ::ai-generated-alert
 ::
 

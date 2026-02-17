@@ -3,7 +3,7 @@
     <UPageLogos
       class="mb-8"
       :ui="{ logos: 'flex-wrap' }"
-      title="Reaparr is sponsored by">
+      title="Reaparr is very gratefully sponsored by">
       <a
         v-for="item in sponsors"
         :key="item.name"
@@ -20,7 +20,7 @@
 
     <UPageLogos
       :ui="{ logos: 'flex-wrap' }"
-      title="Reaparr makes use of the awesome work:">
+      title="Reaparr makes use of the following awesome projects:">
       <a
         v-for="item in tools"
         :key="item.name"
