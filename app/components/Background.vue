@@ -3,6 +3,8 @@
 </template>
 
 <script setup lang="ts">
+import { useBackgroundEffect } from '@composables';
+
 useHead({
   link: [
     {
@@ -15,7 +17,8 @@ useHead({
 });
 
 onBeforeMount(() => {
-  setupBackgroundEffect();
+  const { toggle } = useBackgroundEffect();
+  toggle();
 });
 </script>
 
