@@ -1,5 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'url';
+import { readFile, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
 
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxt/content', '@vueuse/nuxt', '@nuxtjs/sitemap'],
@@ -104,19 +106,22 @@ export default defineNuxtConfig({
     preset: 'aws-amplify',
     awsAmplify: {
       runtime: 'nodejs20.x',
-      imageOptimization: { path: '/_amplify/image' },
-      imageSettings: {
-        sizes: [320, 640, 768, 1024, 1280, 1600, 1920],
-        formats: ['image/avif', 'image/webp'],
-        minimumCacheTTL: 86400,
-        domains: [],
-        remotePatterns: [],
-        dangerouslyAllowSVG: false,
-      },
     },
     prerender: {
       routes: ['/'],
       crawlLinks: true,
+    },
+    hooks: {
+      async compiled(nitro) {
+        const manifestPath = resolve(nitro.options.output.dir, 'deploy-manifest.json');
+        const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+        const ipxRoute = { path: '/_ipx/*', target: { kind: 'Compute', src: 'default' } };
+        const insertAt = manifest.routes.findIndex((r: { path: string }) => r.path === '/*.*');
+        if (insertAt !== -1) {
+          manifest.routes.splice(insertAt, 0, ipxRoute);
+        }
+        await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
+      },
     },
   },
 
@@ -152,6 +157,5 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['avif', 'webp'],
-    provider: 'awsAmplify',
   },
 });
