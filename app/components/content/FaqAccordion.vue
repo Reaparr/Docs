@@ -7,16 +7,22 @@
     @update:model-value="onAccordionChange">
     <template
       v-if="isMounted"
-      #default="{ item, index, open }">
+      #default="{ item }">
       <div class="flex items-center justify-between w-full gap-2 pr-2">
         <span class="flex-1">{{ item.label }}</span>
         <UButton
-          :icon="copiedItem === item.value ? 'i-heroicons-check' : 'i-heroicons-link'"
+          :icon="
+            copiedItem === item.value ? 'i-heroicons-check' : 'i-heroicons-link'
+          "
           color="neutral"
           variant="ghost"
           size="xs"
           class="copy-link-button"
-          :title="copiedItem === item.value ? 'Link copied!' : 'Copy link to this question'"
+          :title="
+            copiedItem === item.value
+              ? 'Link copied!'
+              : 'Copy link to this question'
+          "
           @click.stop="copyLink($event, item.value)" />
       </div>
     </template>
@@ -61,7 +67,8 @@ const copyLink = async (event: Event, value?: string) => {
     copiedItem.value = value;
     toast.add({
       title: 'Link copied!',
-      description: 'The link to this question has been copied to your clipboard.',
+      description:
+        'The link to this question has been copied to your clipboard.',
       icon: 'i-heroicons-check-circle',
       color: 'success',
     });
@@ -73,7 +80,7 @@ const copyLink = async (event: Event, value?: string) => {
   } catch (err) {
     toast.add({
       title: 'Failed to copy',
-      description: 'Could not copy the link to your clipboard.',
+      description: 'Could not copy the link to your clipboard.' + err,
       icon: 'i-heroicons-x-circle',
       color: 'error',
     });
@@ -90,10 +97,10 @@ const hasHashItem = (hash: string) => {
 function onAccordionChange(value: string | string[]) {
   // Convert to array if needed
   const values = Array.isArray(value) ? value : [value];
-  
+
   // Find the last opened item that belongs to this accordion
   const lastOpenedItem = values[values.length - 1];
-  
+
   if (lastOpenedItem && hasHashItem('#' + lastOpenedItem)) {
     router.replace({ hash: '#' + lastOpenedItem });
   }
@@ -108,7 +115,7 @@ onMounted(() => {
 nuxtApp.hook('page:finish', () => {
   if (route.hash && hasHashItem(route.hash)) {
     const itemValue = route.hash.replace('#', '');
-    
+
     // Add to active items (keep existing items open)
     if (!activeItems.value.includes(itemValue)) {
       activeItems.value = [...activeItems.value, itemValue];
@@ -120,7 +127,8 @@ nuxtApp.hook('page:finish', () => {
       if (!targetElement) return;
 
       // Calculate position relative to viewport
-      const elementTop = targetElement.getBoundingClientRect().top + window.scrollY;
+      const elementTop
+        = targetElement.getBoundingClientRect().top + window.scrollY;
       const offset = 80; // Offset for header and spacing
 
       window.scrollTo({
@@ -134,7 +142,7 @@ nuxtApp.hook('page:finish', () => {
 // Watch for hash changes (back/forward navigation)
 watch(
   () => route.hash,
-  (newHash, oldHash) => {
+  (newHash) => {
     if (newHash && hasHashItem(newHash)) {
       const itemValue = newHash.replace('#', '');
 
@@ -147,7 +155,8 @@ watch(
         const targetElement = document.getElementById(itemValue);
         if (!targetElement) return;
 
-        const elementTop = targetElement.getBoundingClientRect().top + window.scrollY;
+        const elementTop
+          = targetElement.getBoundingClientRect().top + window.scrollY;
         const offset = 80;
 
         window.scrollTo({

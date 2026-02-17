@@ -2,8 +2,7 @@
   <UBanner
     :to="to"
     :title="title"
-    :color="color"
-  />
+    :color="color" />
 </template>
 
 <script setup lang="ts">

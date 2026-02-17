@@ -4,8 +4,7 @@
     variant="subtle"
     :title="title"
     :description="description"
-    icon="i-lucide-triangle-alert"
-  />
+    icon="i-lucide-triangle-alert" />
 </template>
 
 <script setup lang="ts">

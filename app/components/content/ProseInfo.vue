@@ -4,8 +4,7 @@
     variant="subtle"
     :title="title"
     :description="description"
-    icon="i-lucide-info"
-  />
+    icon="i-lucide-info" />
 </template>
 
 <script setup lang="ts">

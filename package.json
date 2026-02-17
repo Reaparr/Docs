@@ -1,43 +1,45 @@
 {
-  "name": "reaparr-docs",
-  "version": "1.0.0",
-  "description": "Reaparr Documentation",
-  "author": "JasonLandbridge",
-  "private": true,
-  "scripts": {
-    "dev": "nuxi dev --port=4000",
-    "build": "nuxt build",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "npm-upgrade-packages": "npm-upgrade",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix"
-  },
-  "dependencies": {
-    "@iconify-json/lucide": "^1.2.91",
-    "@iconify-json/mdi": "^1.2.3",
-    "@iconify-json/simple-icons": "^1.2.71",
-    "@nuxt/content": "^3.11.2",
-    "@nuxt/image": "^2.0.0",
-    "@nuxt/ui": "^4.4.0",
-    "@nuxtjs/sitemap": "^7.6.0",
-    "@standard-schema/spec": "^1.1.0",
-    "@vueuse/core": "^14.2.1",
-    "@vueuse/nuxt": "^14.2.1",
-    "better-sqlite3": "^12.6.2",
-    "nuxt": "^4.3.1"
-  },
-  "devDependencies": {
-    "@nuxt/content": "^3.11.2",
-    "@nuxt/eslint": "^1.15.1",
-    "@nuxt/icon": "^2.2.1",
-    "eslint": "^10.0.0",
-    "nuxt": "^4.3.1",
-    "sass": "^1.97.3",
-    "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.4"
-  },
-  "optionalDependencies": {
-    "better-sqlite3": "^12.6.2"
-  }
+	"name": "reaparr-docs",
+	"version": "1.0.0",
+	"description": "Reaparr Documentation",
+	"author": "JasonLandbridge",
+	"private": true,
+	"scripts": {
+		"dev": "nuxi dev --port=4000",
+		"build": "nuxt build",
+		"generate": "nuxt generate",
+		"preview": "nuxt preview",
+		"npm-upgrade-packages": "npm-upgrade",
+		"typecheck": "vue-tsc --noEmit --pretty",
+		"typecheck-watch": "vue-tsc --noEmit --watch --pretty",
+		"lint": "eslint .",
+		"lint:fix": "eslint . --fix"
+	},
+	"dependencies": {
+		"@iconify-json/lucide": "^1.2.91",
+		"@iconify-json/mdi": "^1.2.3",
+		"@iconify-json/simple-icons": "^1.2.71",
+		"@nuxt/content": "^3.11.2",
+		"@nuxt/image": "^2.0.0",
+		"@nuxt/ui": "^4.4.0",
+		"@nuxtjs/sitemap": "^7.6.0",
+		"@standard-schema/spec": "^1.1.0",
+		"@vueuse/core": "^14.2.1",
+		"@vueuse/nuxt": "^14.2.1",
+		"better-sqlite3": "^12.6.2",
+		"nuxt": "^4.3.1"
+	},
+	"devDependencies": {
+		"@nuxt/content": "^3.11.2",
+		"@nuxt/eslint": "^1.15.1",
+		"@nuxt/icon": "^2.2.1",
+		"eslint": "^10.0.0",
+		"nuxt": "^4.3.1",
+		"sass": "^1.97.3",
+		"typescript": "^5.9.3",
+		"vue-tsc": "^3.2.4"
+	},
+	"optionalDependencies": {
+		"better-sqlite3": "^12.6.2"
+	}
 }
