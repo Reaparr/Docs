@@ -101,11 +101,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-11',
 
   nitro: {
-    awsAmplify: {
-      imageSettings: {
-        dangerouslyAllowSVG: true,
-      },
-    },
     prerender: {
       routes: ['/'],
       crawlLinks: true,
@@ -142,8 +137,6 @@ export default defineNuxtConfig({
 	 ** Nuxt Image module configuration
 	 */
   image: {
-    quality: 80,
-    format: ['avif', 'webp'],
-    provider: 'ipx',
+    provider: 'none',
   },
 });
