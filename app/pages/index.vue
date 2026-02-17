@@ -253,10 +253,10 @@
         :ui="{ content: 'max-w-[80vw] z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
         <template #body>
           <div class="relative">
-            <img
+            <NuxtImg
               :src="selectedImage?.src"
               :alt="selectedImage?.text"
-              class="w-full h-auto rounded-lg object-contain">
+              class="w-full h-auto rounded-lg object-contain" />
             <div
               class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
               <p class="text-white text-sm text-center">
