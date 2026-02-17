@@ -1,8 +1,7 @@
 ---
-title: Acknowledgements
+title: Credits
 ---
-
-# Acknowledgements
+# Credits
 
 Thus far, Reaparr has been created and developed by [JasonLandbridge](https://github.com/JasonLandbridge), but this
 could not have been done without the exceptional help of many others.

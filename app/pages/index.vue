@@ -61,12 +61,12 @@
           },
         ]">
         <NuxtImg
-          src="/img/screenshots/demo-3-movies-library-1-poster-table.png"
+          src="/img/screenshots/demo-3-movies-library-1-poster-table.avif"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Movies library poster view"
           @click="
             openModal({
-              src: '/img/screenshots/demo-3-movies-library-1-poster-table.png',
+              src: '/img/screenshots/demo-3-movies-library-1-poster-table.avif',
               text: 'Movies library poster view',
             })
           " />
@@ -93,12 +93,12 @@
           },
         ]">
         <NuxtImg
-          src="/img/screenshots/demo-7-download-screen.png"
+          src="/img/screenshots/demo-7-download-screen.avif"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Download screen"
           @click="
             openModal({
-              src: '/img/screenshots/demo-7-download-screen.png',
+              src: '/img/screenshots/demo-7-download-screen.avif',
               text: 'Download screen',
             })
           " />
@@ -124,12 +124,12 @@
           },
         ]">
         <NuxtImg
-          src="/img/screenshots/demo-5-settings-account-overview.png"
+          src="/img/screenshots/demo-5-settings-account-overview.avif"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Account settings"
           @click="
             openModal({
-              src: '/img/screenshots/demo-5-settings-account-overview.png',
+              src: '/img/screenshots/demo-5-settings-account-overview.avif',
               text: 'Account settings',
             })
           " />
@@ -158,12 +158,12 @@
           },
         ]">
         <NuxtImg
-          src="/img/screenshots/demo-5-settings-integration-overview.png"
+          src="/img/screenshots/demo-5-settings-integration-overview.avif"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Integration settings"
           @click="
             openModal({
-              src: '/img/screenshots/demo-5-settings-integration-overview.png',
+              src: '/img/screenshots/demo-5-settings-integration-overview.avif',
               text: 'Integration settings',
             })
           " />
@@ -189,12 +189,12 @@
           },
         ]">
         <NuxtImg
-          src="/img/screenshots/demo-5-settings-ui-language-select.jpeg"
+          src="/img/screenshots/demo-5-settings-ui-language-select.avif"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="UI language settings"
           @click="
             openModal({
-              src: '/img/screenshots/demo-5-settings-ui-language-select.jpeg',
+              src: '/img/screenshots/demo-5-settings-ui-language-select.avif',
               text: 'UI language settings',
             })
           " />
@@ -223,12 +223,12 @@
           },
         ]">
         <NuxtImg
-          src="/img/screenshots/demo-2-setup-1.png"
+          src="/img/screenshots/demo-2-setup-1.avif"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Setup screen"
           @click="
             openModal({
-              src: '/img/screenshots/demo-2-setup-1.png',
+              src: '/img/screenshots/demo-2-setup-1.avif',
               text: 'Setup screen',
             })
           " />

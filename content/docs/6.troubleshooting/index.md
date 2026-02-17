@@ -5,6 +5,9 @@ description: Step-by-step guide to debug and resolve common issues with Reaparr
 
 # Troubleshooting
 
+::ai-generated-alert
+::
+
 This guide will help you diagnose and resolve issues with Reaparr. Follow these steps systematically to identify and fix problems.
 
 ## General Debugging Steps
