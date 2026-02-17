@@ -55,6 +55,7 @@
       </UButton>
       <!-- Background Toggle -->
       <UTooltip
+        :delay-duration="0"
         :text="
           isAnimated
             ? 'Switch to static background'

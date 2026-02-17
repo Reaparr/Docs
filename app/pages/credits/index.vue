@@ -1,10 +1,10 @@
 <template>
   <UContainer>
-    <SponsorsMarquee />
     <ContentRenderer
       v-if="page?.body"
       class="py-12.5"
       :value="page" />
+    <SponsorsMarquee />
   </UContainer>
 </template>
 

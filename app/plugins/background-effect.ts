@@ -10,8 +10,9 @@ export default defineNuxtPlugin((nuxtApp) => {
     isAnimated.value = !isAnimated.value;
 
     if (isAnimated.value) {
+      const bg = document.getElementById('vanta-bg');
+      if (bg) bg.style.backgroundImage = '';
       setupBackgroundEffect();
-      document.body.style.backgroundImage = '';
     } else {
       // Destroy Vanta effect if present
       const vantaCanvas = document.querySelector('.vanta-canvas');
@@ -25,10 +26,12 @@ export default defineNuxtPlugin((nuxtApp) => {
           vantaCanvas.remove();
         }
       }
-      document.body.style.backgroundImage = 'url(/img/background/background.png)';
-      document.body.style.backgroundSize = 'cover';
-      document.body.style.backgroundPosition = 'center';
-      document.body.style.backgroundAttachment = 'fixed';
+      const bg = document.getElementById('vanta-bg');
+      if (bg) {
+        bg.style.backgroundImage = 'url(/img/background/background.png)';
+        bg.style.backgroundSize = 'cover';
+        bg.style.backgroundPosition = 'center';
+      }
     }
   });
 });
@@ -43,13 +46,13 @@ function setupBackgroundEffect() {
   console.info('Wave effect created!');
 
   if (gl instanceof WebGLRenderingContext) {
-    if (document.getElementsByClassName('body').length > 0) {
+    if ((window as any).__vantaEffect) {
       return;
     }
 
-    // @ts-ignore
+    // @ts-expect-error - imported in nuxt.config.ts
     const effect = VANTA.WAVES({
-      el: 'body',
+      el: '#vanta-bg',
       mouseControls: false,
       touchControls: false,
       gyroControls: false,

@@ -1,8 +1,8 @@
 <template>
   <div class="min-h-screen xl:grid xl:grid-cols-2">
     <UPageSection
-      title="Changelog"
-      description="Display GitHub release notes as a beautiful changelog for any repository with this Nuxt UI template."
+      title="Reaparr Changelog"
+      description="Browse the latest Reaparr releases and updates."
       orientation="vertical"
       :links="[
         {
@@ -10,16 +10,7 @@
           icon: 'i-lucide-book-open',
           variant: 'ghost',
           size: 'md',
-          to: 'https://ui.nuxt.com/getting-started/installation/nuxt',
-          target: '_blank',
-        },
-        {
-          label: 'GitHub',
-          icon: 'i-simple-icons-github',
-          variant: 'ghost',
-          size: 'md',
-          to: 'https://github.com/nuxt-ui-templates/changelog',
-          target: '_blank',
+          to: '/docs/getting-started',
         },
       ]"
       :ui="{
@@ -31,6 +22,12 @@
         description: 'text-left max-w-lg',
         links: 'gap-1 justify-start -ms-2.5',
       }">
+      <template #title>
+        <div class="flex items-center gap-2">
+          <ReaparrLogo :size="32" />
+          <span>Reaparr Changelog</span>
+        </div>
+      </template>
       <template #top>
         <ClientOnly>
           <SkyBg />
@@ -40,9 +37,7 @@
           class="absolute -right-1/2 z-[-1] rounded-full bg-primary blur-[300px] size-60 sm:size-100 transform -translate-y-1/2 top-1/2" />
       </template>
 
-      <template #headline>
-        <AppLogo class="w-auto h-6 shrink-0 text-highlighted" />
-      </template>
+      <template #headline />
 
       <template #default />
     </UPageSection>
@@ -61,6 +56,7 @@
           v-for="version in versions"
           :key="version.tag"
           v-bind="version"
+          :to="version.releaseUrl"
           :ui="{
             root: 'flex items-start',
             container: 'max-w-xl',
@@ -70,6 +66,15 @@
             indicator:
               'sticky top-0 pt-16 -mt-16 sm:pt-24 sm:-mt-24 lg:pt-32 lg:-mt-32',
           }">
+          <template #title>
+            <NuxtLink
+              :to="version.releaseUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hover:underline">
+              {{ version.title }}
+            </NuxtLink>
+          </template>
           <template #body>
             <ClientOnly>
               <MDC
@@ -87,17 +92,26 @@
 const { data: versions } = await useFetch(
   'https://api.github.com/repos/Reaparr/Reaparr/releases',
   {
-    transform: (data: Array<{
-      name?: string;
-      tag_name: string;
-      published_at: string;
-      body: string;
-    }>) => {
+    transform: (
+      data: Array<{
+        name?: string;
+        tag_name: string;
+        published_at: string;
+        body: string;
+        releaseUrl: string;
+        release: string;
+      }>,
+    ) => {
       return data.map((release) => ({
         tag: release.tag_name,
         title: release.name || release.tag_name,
         date: release.published_at,
-        markdown: release.body,
+        markdown: release.body.replace(
+          /^# \[[^\]]+\]\([^)]+\) \(\d{4}-\d{2}-\d{2}\)\n+/m,
+          '',
+        ),
+        releaseUrl: release.html_url,
+        release: release,
       }));
     },
   },
