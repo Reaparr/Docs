@@ -103,9 +103,6 @@ export default defineNuxtConfig({
   nitro: {
     preset: 'aws-amplify',
     awsAmplify: {
-      imageSettings: {
-        formats: ['image/avif', 'image/webp'],
-      },
       runtime: 'nodejs20.x',
     },
     prerender: {
@@ -146,6 +143,6 @@ export default defineNuxtConfig({
   image: {
     quality: 80,
     format: ['avif', 'webp'],
-    provider: 'awsAmplify',
+    provider: 'ipxStatic',
   },
 });
