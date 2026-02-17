@@ -36,6 +36,6 @@
     "vue-tsc": "^3.2.4"
   },
   "optionalDependencies": {
-    "better-sqlite3": "^12.6.0"
+    "better-sqlite3": "^12.6.2"
   }
 }
