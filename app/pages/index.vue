@@ -236,29 +236,6 @@
           " />
       </UPageSection>
 
-      <!-- Image modal -->
-      <UModal
-        v-model:open="modalOpen"
-        :title="selectedImage?.text"
-        description="Screenshot preview"
-        :ui="{ content: 'max-w-[80vw] z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
-        <template #body>
-          <div class="relative">
-            <NuxtImg
-              :src="selectedImage?.src"
-              :alt="selectedImage?.text"
-              width="2560"
-              height="1440"
-              class="w-full h-auto rounded-lg object-contain" />
-            <div class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
-              <p class="text-white text-sm text-center">
-                {{ selectedImage?.text }}
-              </p>
-            </div>
-          </div>
-        </template>
-      </UModal>
-
       <UPageCTA
         title="Shut up and take my money!"
         description="Set up Reaparr in minutes and take control of your media library."
@@ -282,8 +259,6 @@
 </template>
 
 <script setup lang="ts">
-import type { IScreenshot } from '@interfaces';
-
 const pageHeroUi = {
   container: 'flex flex-col lg:grid py-10 sm:py-14 lg:py-18 gap-8 sm:gap-y-12',
 };
@@ -331,11 +306,5 @@ useHead({
   ],
 });
 
-const modalOpen = ref(false);
-const selectedImage = ref<IScreenshot | null>(null);
-
-function openModal(item: IScreenshot) {
-  selectedImage.value = item;
-  modalOpen.value = true;
-}
+const { openModal } = useImageModal();
 </script>

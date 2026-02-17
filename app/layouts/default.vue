@@ -18,6 +18,7 @@
     </ClientOnly>
 
     <AppHeader />
+    <ImageModal />
 
     <UMain id="main-content">
       <slot />

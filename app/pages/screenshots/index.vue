@@ -43,38 +43,15 @@
           class="rounded-lg w-full h-full object-cover" />
       </div>
     </div>
-    <UModal
-      v-model:open="modalOpen"
-      :title="selectedImage?.text"
-      description="Screenshot preview"
-      :ui="{ content: 'max-w-[80vw] z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
-      <template #body>
-        <div class="relative">
-          <NuxtImg
-            :src="selectedImage?.src"
-            :alt="selectedImage?.text"
-            width="2560"
-            height="1440"
-            class="w-full h-auto rounded-lg object-contain" />
-          <div class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
-            <p class="text-white text-sm text-center">
-              {{ selectedImage?.text }}
-            </p>
-          </div>
-        </div>
-      </template>
-    </UModal>
   </UContainer>
 </template>
 
 <script setup lang="ts">
-import type { IScreenshot } from '@interfaces';
 import { screenshots } from '~/composables';
 
+const { openModal } = useImageModal();
 const carousel = useTemplateRef('carousel');
 const activeIndex = ref(0);
-const modalOpen = ref(false);
-const selectedImage = ref<IScreenshot | null>(null);
 
 function onClickPrev() {
   activeIndex.value--;
@@ -89,11 +66,6 @@ function onSelect(index: number) {
 function select(index: number) {
   activeIndex.value = index;
   carousel.value?.emblaApi?.scrollTo(index);
-}
-
-function openModal(item: IScreenshot) {
-  selectedImage.value = item;
-  modalOpen.value = true;
 }
 </script>
 
