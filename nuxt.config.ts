@@ -141,6 +141,7 @@ export default defineNuxtConfig({
 	 ** Nuxt Image module configuration
 	 */
   image: {
-    provider: 'none',
+    quality: 80,
+    format: ['avif', 'webp'],
   },
 });
