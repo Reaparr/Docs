@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "@nuxt/ui";
+
+@theme static {
+    --font-sans: 'Public Sans', sans-serif;
+}
+
+.dark {
+    --ui-bg: rgba(0, 0, 0, 0.7);
+    --ui-bg-muted: rgba(0, 0, 0, 0.3);
+    --ui-bg-elevated: rgba(0, 0, 0, 0.3);
+    --ui-bg-accented: rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure tooltips render above the header */
+[data-reka-popper-content-wrapper] {
+    z-index: 9999 !important;
+}

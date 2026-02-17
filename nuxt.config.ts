@@ -1,61 +1,12 @@
+// https://nuxt.com/docs/api/configuration/nuxt-config
 import { fileURLToPath } from 'url';
-import { defineNuxtConfig } from 'nuxt/config';
 
-// https://v3.nuxtjs.org/api/configuration/nuxt.config
 export default defineNuxtConfig({
-  srcDir: 'src/',
-  ssr: true,
-  dev: false,
-  content: {
-    documentDriven: false,
-    markdown: {
-      anchorLinks: false,
-    },
-    highlight: {
-      theme: 'github-dark', preload: ['ts', 'js', 'css', 'json', 'bash'],
-    },
-  },
-
-  app: {
-    pageTransition: { name: 'page', mode: 'out-in' },
-    head: {
-      script: [
-        { src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js' },
-        { src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js' },
-      ],
-      noscript: [{ children: 'JavaScript is required' }],
-      link: [{
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap',
-      }],
-    },
-  },
-
-  css: ['@/assets/scss/style.scss'],
-
-  modules: [
-    '@nuxt/content',
-    '@pinia/nuxt',
-    '@nuxtjs/plausible',
-    '@primevue/nuxt-module',
-    '@nuxt/eslint',
-    '@nuxt/icon',
-    '@nuxt/image',
-    'nuxt-lodash',
-  ],
-  primevue: {
-    options: { ripple: true }, importTheme: { from: './assets/theme/primevue-theme.js' },
-  },
-  build: {
-    transpile: ['primevue'],
-  },
-  plausible: {
-    autoOutboundTracking: true,
-  },
+  modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxt/content', '@vueuse/nuxt', '@nuxtjs/sitemap'],
   /*
-   ** Auto-import components
-   *  Doc: https://github.com/nuxt/components
-   */
+	 ** Auto-import components
+	 *  Doc: https://github.com/nuxt/components
+	 */
   components: {
     loader: true,
     dirs: [
@@ -67,22 +18,100 @@ export default defineNuxtConfig({
       },
     ],
   },
+  devtools: {
+    enabled: false,
+  },
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    head: {
+      title: 'Reaparr Docs',
+      titleTemplate: '%s | Reaparr Docs',
+      script: [
+        {
+          src: 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js',
+          defer: true,
+        },
+        {
+          src: 'https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js',
+          defer: true,
+        },
+        {
+          innerHTML: `(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "vixss7ubk1");`,
+        },
+      ],
+      noscript: [{ textContent: 'JavaScript is required' }],
+      meta: [
+        {
+          name: 'description',
+          content: 'Documentation website for the Reaparr project',
+        },
+        { name: 'color-scheme', content: 'dark only' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'Reaparr Docs' },
+        {
+          property: 'og:description',
+          content: 'Documentation website for the Reaparr project',
+        },
+        { property: 'og:image', content: 'https://reaparr.rocks/og-image.png' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        {
+          name: 'twitter:description',
+          content: 'Documentation website for the Reaparr project',
+        },
+        {
+          name: 'twitter:image',
+          content: 'https://reaparr.rocks/og-image.png',
+        },
+      ],
+      link: [
+        { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+        {
+          rel: 'preload',
+          as: 'image',
+          href: '/img/background/background.avif',
+          type: 'image/avif',
+        },
+      ],
+    },
+  },
+  css: ['~/assets/css/main.css'],
+
+  site: {
+    url: 'https://reaparr.rocks',
+    name: 'Reaparr Docs',
+  },
+
+  colorMode: {
+    preference: 'dark',
+    fallback: 'dark',
+    classPrefix: '',
+    classSuffix: '',
+  },
 
   alias: {
-    const: fileURLToPath(new URL('./src/common/constants', import.meta.url)),
-    store: fileURLToPath(new URL('./src/store', import.meta.url)),
-    components: fileURLToPath(new URL('./src/components', import.meta.url)),
+    '@interfaces': fileURLToPath(new URL('./app/types/interfaces/', import.meta.url)),
+    '@components': fileURLToPath(new URL('./app/components/', import.meta.url)),
+    '@composables': fileURLToPath(new URL('./app/composables/', import.meta.url)),
   },
-  image: {
-    provider: 'ipx',
+
+  routeRules: {
+    '/docs': { redirect: '/docs/getting-started', prerender: false },
   },
+
+  compatibilityDate: '2024-07-11',
+
   nitro: {
     awsAmplify: {
       imageSettings: {
         dangerouslyAllowSVG: true,
       },
     },
+    prerender: {
+      routes: ['/'],
+      crawlLinks: true,
+    },
   },
+
   eslint: {
     config: {
       stylistic: {
@@ -98,5 +127,22 @@ export default defineNuxtConfig({
     },
   },
 
-  compatibilityDate: '2024-08-26',
+  icon: {
+    serverBundle: {
+      collections: ['lucide', 'mdi', 'simple-icons'],
+    },
+    clientBundle: {
+      scan: true,
+      sizeLimitKb: 512,
+    },
+    fallbackToApi: false,
+    fetchTimeout: 0,
+  },
+  /*
+	 ** Nuxt Image module configuration
+	 */
+  image: {
+    quality: 80,
+    format: ['avif', 'webp'],
+  },
 });
