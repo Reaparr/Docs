@@ -8,8 +8,25 @@ export default defineNuxtConfig({
     '@nuxt/ui',
     '@nuxt/content',
     '@vueuse/nuxt',
-    'nuxt-og-image',
   ],
+  /*
+   ** Auto-import components
+   *  Doc: https://github.com/nuxt/components
+   */
+  components: {
+    loader: true,
+    dirs: [
+      {
+        path: './components',
+        pathPrefix: false,
+        global: true,
+        extensions: ['vue'],
+      },
+    ],
+  },
+  devtools: {
+    enabled: false,
+  },
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
     head: {
@@ -31,35 +48,27 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     },
   },
-  devtools: {
-    enabled: false,
-  },
-  /*
-   ** Auto-import components
-   *  Doc: https://github.com/nuxt/components
-   */
-  components: {
-    loader: true,
-    dirs: [
-      {
-        path: './components',
-        pathPrefix: false,
-        global: true,
-        extensions: ['vue'],
-      },
-    ],
-  },
   css: ['~/assets/css/main.css'],
-
-  routeRules: {
-    '/docs': { redirect: '/docs/getting-started', prerender: false },
-  },
 
   colorMode: {
     preference: 'dark',
     fallback: 'dark',
     classPrefix: '',
     classSuffix: '',
+  },
+
+  alias: {
+    '@interfaces': fileURLToPath(
+      new URL('./app/types/interfaces/', import.meta.url),
+    ),
+    '@components': fileURLToPath(new URL('./app/components/', import.meta.url)),
+    '@composables': fileURLToPath(
+      new URL('./app/composables/', import.meta.url),
+    ),
+  },
+
+  routeRules: {
+    '/docs': { redirect: '/docs/getting-started', prerender: false },
   },
 
   compatibilityDate: '2024-07-11',
@@ -89,15 +98,5 @@ export default defineNuxtConfig({
         quoteProps: 'as-needed',
       },
     },
-  },
-
-  alias: {
-    '@interfaces': fileURLToPath(
-      new URL('./app/types/interfaces/', import.meta.url),
-    ),
-    '@components': fileURLToPath(new URL('./app/components/', import.meta.url)),
-    '@composables': fileURLToPath(
-      new URL('./app/composables/', import.meta.url),
-    ),
   },
 });

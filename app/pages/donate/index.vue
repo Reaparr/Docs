@@ -18,8 +18,8 @@
     </UPageCTA>
 
     <UPageCTA
-      title="Where Your Money Goes"
-      description="All funds are used directly for the following."
+      title="Where Your Donations Goes"
+      description="All donations are used directly for the following."
       :ui="{
         container: 'py-8 sm:py-10 lg:py-12',
         title: 'text-2xl sm:text-3xl',
@@ -61,6 +61,12 @@ const benefits = [
     description:
       'Adding new features and improvements to keep Reaparr evolving.',
     icon: 'i-lucide-code-2',
+  },
+  {
+    title: 'AI Tooling',
+    description:
+      'Powering development with AI tools that significantly increase productivity but come at a high cost.',
+    icon: 'i-lucide-sparkles',
   },
   {
     title: 'Bug Fixes',
