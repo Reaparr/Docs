@@ -101,6 +101,10 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-11',
 
   nitro: {
+    preset: 'aws-amplify',
+    awsAmplify: {
+      runtime: 'nodejs20.x',
+    },
     prerender: {
       routes: ['/'],
       crawlLinks: true,

@@ -9,9 +9,9 @@ frontend:
     build:
       commands:
         - export PATH="$HOME/.bun/bin:$PATH"
-        - NITRO_PRESET=static bun run generate
+        - bun run generate
   artifacts:
-    baseDirectory: .output/public
+    baseDirectory: .amplify-hosting
     files:
       - '**/*'
   cache:
