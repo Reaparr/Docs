@@ -1,6 +1,15 @@
 <template>
   <UApp>
     <Background />
+    <ClientOnly>
+      <LazyUContentSearch
+        :files="files"
+        shortcut="meta_k"
+        :navigation="navigation"
+        :links="links"
+        :color-mode="false"
+        :fuse="{ resultLimit: 42 }" />
+    </ClientOnly>
     <AppHeader />
 
     <UMain>

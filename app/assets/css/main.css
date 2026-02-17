@@ -12,11 +12,6 @@
     --ui-bg-accented: rgba(0, 0, 0, 0.3);
 }
 
-/* Ensures ContentSearch dialog has a black background in dark mode, overriding the default styles */
-body > div[data-slot="content"][role="dialog"] {
-    background-color: #000000 !important;
-}
-
 /* Ensure tooltips render above the header */
 [data-reka-popper-content-wrapper] {
     z-index: 9999 !important;

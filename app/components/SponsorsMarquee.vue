@@ -2,38 +2,37 @@
   <div class="w-full py-8">
     <UPageLogos
       class="mb-8"
+      :ui="{ logos: 'flex-wrap' }"
       title="Reaparr is sponsored by">
-      <UTooltip
+      <a
         v-for="item in sponsors"
         :key="item.name"
-        :text="item.name"
-        :delay-duration="0">
-        <UButton
-          :icon="item.icon"
-          color="neutral"
-          variant="ghost"
-          size="xl"
-          :to="item.url"
-          target="_blank"
-          :aria-label="item.name" />
-      </UTooltip>
+        :href="item.url"
+        target="_blank"
+        :aria-label="item.name"
+        class="flex flex-col items-center gap-1 w-20 py-2 rounded-md hover:bg-neutral-800 transition-colors">
+        <UIcon
+          :name="item.icon"
+          class="size-6" />
+        <span class="text-xs text-neutral-400 text-center leading-tight">{{ item.name }}</span>
+      </a>
     </UPageLogos>
 
-    <UPageLogos title="Reaparr makes use of the awesome work:">
-      <UTooltip
+    <UPageLogos
+      :ui="{ logos: 'flex-wrap' }"
+      title="Reaparr makes use of the awesome work:">
+      <a
         v-for="item in tools"
         :key="item.name"
-        :text="item.name"
-        :delay-duration="0">
-        <UButton
-          :icon="item.icon"
-          color="neutral"
-          variant="ghost"
-          size="xl"
-          :to="item.url"
-          target="_blank"
-          :aria-label="item.name" />
-      </UTooltip>
+        :href="item.url"
+        target="_blank"
+        :aria-label="item.name"
+        class="flex flex-col items-center gap-1 w-20 py-2 rounded-md hover:bg-neutral-800 transition-colors">
+        <UIcon
+          :name="item.icon"
+          class="size-6" />
+        <span class="text-xs text-neutral-400 text-center leading-tight">{{ item.name }}</span>
+      </a>
     </UPageLogos>
   </div>
 </template>
