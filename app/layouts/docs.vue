@@ -1,6 +1,6 @@
 <template>
   <UApp>
-    <Background />
+    <BackGround />
     <ClientOnly>
       <LazyUContentSearch
         :files="files"

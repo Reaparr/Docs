@@ -6,7 +6,7 @@
       Skip to content
     </a>
 
-    <Background />
+    <BackGround />
     <ClientOnly>
       <LazyUContentSearch
         :files="files"
