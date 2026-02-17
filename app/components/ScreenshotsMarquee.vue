@@ -13,7 +13,8 @@
         :src="screenshot.src"
         width="460"
         height="258"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
         :alt="screenshot.text"
         class="aspect-video border border-default rounded-lg bg-white" />
     </UMarquee>
@@ -29,7 +30,8 @@
         :src="screenshot.src"
         width="460"
         height="258"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
         :alt="screenshot.text"
         class="aspect-video border border-default rounded-lg bg-white" />
     </UMarquee>
@@ -46,7 +48,8 @@
         :src="screenshot.src"
         width="460"
         height="258"
-        loading="lazy"
+        loading="eager"
+        fetchpriority="high"
         :alt="screenshot.text"
         class="aspect-video border border-default rounded-lg bg-white" />
     </UMarquee>

@@ -14,8 +14,9 @@ onBeforeMount(() => {
 <style>
 /* Used to keep the vanta.js background in place and overwrite the built-in position: absolute; */
 #vanta-bg {
-  background: url("/img/background/background.avif") no-repeat center center
-    fixed !important;
+  background: url("/img/background/background.avif") center center fixed
+    no-repeat !important;
+  background-size: cover;
   position: fixed !important;
   top: 0;
   left: 0;
