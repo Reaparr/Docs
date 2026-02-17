@@ -111,17 +111,18 @@ export default defineNuxtConfig({
       routes: ['/'],
       crawlLinks: true,
     },
-    hooks: {
-      async compiled(nitro) {
-        const manifestPath = resolve(nitro.options.output.dir, 'deploy-manifest.json');
-        const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
-        const ipxRoute = { path: '/_ipx/*', target: { kind: 'Compute', src: 'default' } };
-        const insertAt = manifest.routes.findIndex((r: { path: string }) => r.path === '/*.*');
-        if (insertAt !== -1) {
-          manifest.routes.splice(insertAt, 0, ipxRoute);
-        }
-        await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
-      },
+  },
+
+  hooks: {
+    async 'nitro:build:public-assets'(nitro) {
+      const manifestPath = resolve(nitro.options.output.dir, 'deploy-manifest.json');
+      const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+      const ipxRoute = { path: '/_ipx/*', target: { kind: 'Compute', src: 'default' } };
+      const insertAt = manifest.routes.findIndex((r: { path: string }) => r.path === '/*.*');
+      if (insertAt !== -1) {
+        manifest.routes.splice(insertAt, 0, ipxRoute);
+      }
+      await writeFile(manifestPath, JSON.stringify(manifest, null, 2));
     },
   },
 
