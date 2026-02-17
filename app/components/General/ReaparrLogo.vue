@@ -2,6 +2,7 @@
   <NuxtImg
     :height="size"
     :width="size"
+    preload
     src="/img/logo/reaparr-full-512.png"
     alt="Reaparr Docs Logo" />
 </template>

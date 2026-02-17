@@ -108,6 +108,10 @@ export default defineNuxtConfig({
     prerender: {
       routes: ['/'],
       crawlLinks: true,
+      // Generates /path.html instead of /path/index.html so AWS Amplify can
+      // serve routes without trailing slashes directly, avoiding 404 on hard refresh.
+      // See: https://github.com/aws-amplify/amplify-js/issues/14606
+      autoSubfolderIndex: false,
     },
   },
   eslint: {

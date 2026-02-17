@@ -2,6 +2,7 @@
   <NuxtImg
     :height="height"
     :style="{ height: `${height}px`, width: 'auto' }"
+    preload
     class="logo object-contain"
     src="/img/logo/reaparr-title-full.png"
     alt="Reaparr Title" />
