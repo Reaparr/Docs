@@ -48,8 +48,10 @@
     </div>
     <UModal
       v-model:open="modalOpen"
-      :ui="{ content: 'max-w-[80vw] z-[100]', overlay: 'z-[99]' }">
-      <template #content>
+      :title="selectedImage?.text"
+      description="Screenshot preview"
+      :ui="{ content: 'max-w-[80vw] z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
+      <template #body>
         <div class="relative">
           <img
             :src="selectedImage?.src"

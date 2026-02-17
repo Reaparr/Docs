@@ -74,8 +74,7 @@
 
       <!-- Download Features -->
       <UPageSection
-        v-bind="pageSectionUi"
-        reverse
+        v-bind="pageSectionUiReverse"
         orientation="horizontal"
         headline="Performance"
         title="Scalable, Multi-Threaded Downloads"
@@ -137,8 +136,7 @@
 
       <!-- Sonarr/Radarr integration -->
       <UPageSection
-        v-bind="pageSectionUi"
-        reverse
+        v-bind="pageSectionUiReverse"
         orientation="horizontal"
         headline="Integration"
         title="Sonarr & Radarr Support"
@@ -202,8 +200,7 @@
 
       <!-- Docker support -->
       <UPageSection
-        v-bind="pageSectionUi"
-        reverse
+        v-bind="pageSectionUiReverse"
         orientation="horizontal"
         headline="Deployment"
         title="Works Anywhere Docker Runs"
@@ -237,8 +234,10 @@
       <!-- Image modal -->
       <UModal
         v-model:open="modalOpen"
-        :ui="{ content: 'max-w-[80vw] z-[100]', overlay: 'z-[99]' }">
-        <template #content>
+        :title="selectedImage?.text"
+        description="Screenshot preview"
+        :ui="{ content: 'max-w-[80vw] z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
+        <template #body>
           <div class="relative">
             <img
               :src="selectedImage?.src"
@@ -286,6 +285,13 @@ const pageHeroUi = {
 const pageSectionUi = {
   ui: {
     container: 'flex flex-col lg:grid py-8 sm:py-12 lg:py-16 gap-8 sm:gap-12',
+  },
+};
+
+const pageSectionUiReverse = {
+  ui: {
+    container: 'flex flex-col lg:grid py-8 sm:py-12 lg:py-16 gap-8 sm:gap-12',
+    wrapper: 'lg:order-last',
   },
 };
 

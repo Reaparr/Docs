@@ -57,19 +57,21 @@
       </UButton>
 
       <!-- Background Toggle -->
-      <UTooltip
-        :delay-duration="0"
-        :text="
-          isAnimated
-            ? 'Switch to static background'
-            : 'Switch to animated background'
-        ">
-        <UButton
-          class="mx-1"
-          variant="outline"
-          :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
-          @click="toggle" />
-      </UTooltip>
+      <ClientOnly>
+        <UTooltip
+          :delay-duration="0"
+          :text="
+            isAnimated
+              ? 'Switch to static background'
+              : 'Switch to animated background'
+          ">
+          <UButton
+            class="mx-1"
+            variant="outline"
+            :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
+            @click="toggle" />
+        </UTooltip>
+      </ClientOnly>
     </template>
 
     <!-- Mobile menu body (shown when hamburger is open) -->

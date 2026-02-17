@@ -31,7 +31,6 @@ items:
 #platforms
 - [Docker](/docs/installation/docker)
 - [Unraid](/docs/installation/unraid)
-- [Linux](/docs/installation/linux)
 - [Windows](/docs/installation/windows)
 - [macOS](/docs/installation/macos)
 - [Synology](/docs/installation/synology)
