@@ -9,6 +9,7 @@
           :alt="selectedImage?.text"
           width="1280"
           height="720"
+          densities="x1 x2"
           class="block w-full h-full object-contain rounded-lg"
           @load="onImageLoad" />
         <div class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
