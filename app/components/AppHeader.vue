@@ -60,20 +60,30 @@
       </UButton>
 
       <!-- Background Toggle -->
-      <UTooltip
-        :delay-duration="0"
-        :text="
-          isAnimated
-            ? 'Switch to static background'
-            : 'Switch to animated background'
-        ">
+      <template v-if="mounted">
+        <UTooltip
+          :delay-duration="0"
+          :text="
+            isAnimated
+              ? 'Switch to static background'
+              : 'Switch to animated background'
+          ">
+          <UButton
+            class="mx-1 cursor-pointer"
+            variant="outline"
+            :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
+            :aria-label="isAnimated ? 'Switch to static background' : 'Switch to animated background'"
+            @click="toggle" />
+        </UTooltip>
+      </template>
+      <template v-else>
         <UButton
           class="mx-1 cursor-pointer"
           variant="outline"
-          :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
-          :aria-label="isAnimated ? 'Switch to static background' : 'Switch to animated background'"
+          icon="mdi:image"
+          aria-label="Switch to animated background"
           @click="toggle" />
-      </UTooltip>
+      </template>
     </template>
 
     <!-- Mobile menu body (shown when hamburger is open) -->
@@ -131,4 +141,9 @@
 const { headerItems: items } = useNavigation();
 const { isAnimated, toggle } = useBackgroundEffect();
 const docsNavigation = useDocsNavigation();
+
+const mounted = ref(false);
+onMounted(() => {
+  mounted.value = true;
+});
 </script>
