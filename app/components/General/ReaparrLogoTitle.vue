@@ -2,10 +2,9 @@
   <NuxtImg
     :height="height"
     :style="{ 'max-height': `${height}px`, 'width': 'auto' }"
-    preload
     class="logo object-contain"
     :quality="100"
-    :format="['avif']"
+    format="avif"
     src="/img/logo/reaparr-title-full.png"
     alt="Reaparr Title" />
 </template>
