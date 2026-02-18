@@ -3,15 +3,14 @@
     v-model:open="modalOpen"
     :ui="{ content: 'max-w-[90vw] w-fit z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
     <template #body>
-      <div class="relative" :style="containerStyle">
-        <NuxtImg
-          :src="selectedImage?.src"
+      <div
+        class="relative"
+        :style="containerStyle">
+        <img
+          :src="modalSrc"
           :alt="selectedImage?.text"
-          width="1280"
-          height="720"
-          densities="x1 x2"
           class="block w-full h-full object-contain rounded-lg"
-          @load="onImageLoad" />
+          @load="onImageLoad">
         <div class="absolute bottom-0 left-0 right-0 rounded-b-lg bg-black/25 px-4 py-2">
           <p class="text-white text-sm text-center">
             {{ selectedImage?.text }}
@@ -24,6 +23,16 @@
 
 <script setup lang="ts">
 const { modalOpen, selectedImage } = useImageModal();
+
+const img = useImage();
+
+const modalSrc = computed(() => {
+  if (!selectedImage.value?.src) return '';
+  return img(selectedImage.value.src, {
+    width: 1600,
+    quality: 90,
+  });
+});
 
 const naturalRatio = ref<number | null>(null);
 
