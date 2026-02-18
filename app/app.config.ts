@@ -35,6 +35,11 @@ export default defineAppConfig({
         topFooter: 'bg-transparent',
       },
     },
+    header: {
+      slots: {
+        overlay: 'bg-black/90',
+      },
+    },
     contentSearch: {
       slots: {
         modal: 'bg-black z-99', // Ensure the search modal appears above UI

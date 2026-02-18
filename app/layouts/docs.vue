@@ -44,4 +44,11 @@ const { data: files } = useLazyAsyncData('search', () => queryCollectionSearchSe
 });
 
 const { footerLinks: links } = useNavigation();
+
+const docsNavigation = useDocsNavigation();
+docsNavigation.value = navigation.value;
+
+onUnmounted(() => {
+  docsNavigation.value = null;
+});
 </script>

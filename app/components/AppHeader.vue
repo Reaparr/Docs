@@ -85,6 +85,12 @@
         orientation="vertical"
         class="-mx-2.5" />
 
+      <UContentNavigation
+        v-if="docsNavigation"
+        :navigation="docsNavigation"
+        class="mt-4 border-t pt-4"
+        highlight />
+
       <div class="flex flex-col gap-2 border-t mt-4 pt-4">
         <UButton
           as="a"
@@ -126,4 +132,5 @@
 <script setup lang="ts">
 const { headerItems: items } = useNavigation();
 const { isAnimated, toggle } = useBackgroundEffect();
+const docsNavigation = useDocsNavigation();
 </script>
