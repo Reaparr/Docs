@@ -3,6 +3,8 @@
     :height="size"
     :width="size"
     preload
+    :quality="100"
+    :format="['avif']"
     src="/img/logo/reaparr-full-512.png"
     alt="Reaparr Docs Logo" />
 </template>

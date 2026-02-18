@@ -97,8 +97,4 @@ export const screenshots: IScreenshot[] = [
     text: 'Settings – language select and other general settings overview',
     src: '/img/screenshots/demo-5-settings-ui-language-select.avif',
   },
-  {
-    text: 'Unraid Community Applications',
-    src: '/img/screenshots/demo-10-unraid-ca.avif',
-  },
 ];
