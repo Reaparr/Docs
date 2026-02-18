@@ -1,5 +1,5 @@
 <template>
-  <UHeader>
+  <UHeader :ui="headerUi">
     <template #left>
       <NuxtLink
         to="/"
@@ -161,6 +161,10 @@ const btnUi = computed(() => scrolled.value
   ? { base: 'ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 transition-colors duration-300' }
   : { base: 'ring ring-inset ring-white/50 text-white hover:bg-white/10 transition-colors duration-300' },
 );
+
+const headerUi = computed(() => ({
+  toggle: `lg:hidden -me-1.5 transition-colors duration-300 ${scrolled.value ? 'text-primary' : 'text-white'}`,
+}));
 
 const navUi = computed(() => scrolled.value
   ? {
