@@ -14,7 +14,8 @@
     <UNavigationMenu
       :items="items"
       orientation="horizontal"
-      variant="pill"
+      :color="scrolled ? 'primary' : 'neutral'"
+      :ui="navUi"
       class="hidden lg:flex" />
 
     <template #right>
@@ -25,6 +26,7 @@
         href="https://discord.com/invite/Qa3BtxN77g"
         rel="noopener"
         variant="outline"
+        :ui="btnUi"
         icon=""
         aria-label="Join our Discord"
         target="_blank">
@@ -39,6 +41,7 @@
         icon=""
         rel="noopener"
         variant="outline"
+        :ui="btnUi"
         aria-label="Reaparr on GitHub"
         target="_blank">
         <UIcon name="mdi:github" />
@@ -52,6 +55,7 @@
         href="https://github.com/Reaparr/Docs"
         icon=""
         variant="outline"
+        :ui="btnUi"
         rel="noopener"
         aria-label="Reaparr Docs on GitHub"
         target="_blank">
@@ -71,6 +75,7 @@
           <UButton
             class="mx-1 cursor-pointer"
             variant="outline"
+            :ui="btnUi"
             :icon="isAnimated ? 'mdi:image-off' : 'mdi:image'"
             :aria-label="isAnimated ? 'Switch to static background' : 'Switch to animated background'"
             @click="toggle" />
@@ -80,6 +85,7 @@
         <UButton
           class="mx-1 cursor-pointer"
           variant="outline"
+          :ui="btnUi"
           icon="mdi:image"
           aria-label="Switch to animated background"
           @click="toggle" />
@@ -91,6 +97,7 @@
       <UNavigationMenu
         :items="items"
         orientation="vertical"
+        :ui="{ linkLabel: 'text-white', linkLeadingIcon: 'text-white shrink-0 size-5' }"
         class="-mx-2.5" />
 
       <UContentNavigation
@@ -146,4 +153,24 @@ const mounted = ref(false);
 onMounted(() => {
   mounted.value = true;
 });
+
+const { y } = useWindowScroll();
+const scrolled = computed(() => y.value > 32);
+
+const btnUi = computed(() => scrolled.value
+  ? { base: 'ring ring-inset ring-primary/50 text-primary hover:bg-primary/10 transition-colors duration-300' }
+  : { base: 'ring ring-inset ring-white/50 text-white hover:bg-white/10 transition-colors duration-300' },
+);
+
+const navUi = computed(() => scrolled.value
+  ? {
+      link: 'group hover:before:bg-primary/10 data-[active]:before:bg-primary/15 data-[active]:before:ring-1 data-[active]:before:ring-primary/50',
+      linkLabel: 'text-primary group-data-[active]:text-primary transition-colors duration-300',
+      linkLeadingIcon: 'text-primary! group-data-[active]:text-primary! shrink-0 size-5 transition-colors duration-300',
+    }
+  : {
+      linkLabel: 'text-white transition-colors duration-300',
+      linkLeadingIcon: 'text-white shrink-0 size-5 transition-colors duration-300',
+    },
+);
 </script>
