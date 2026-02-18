@@ -30,8 +30,6 @@
       <LazyStarsBg />
     </UPageHero>
 
-    <USeparator label="Features" />
-
     <div>
       <!-- Library Feature -->
       <UPageSection
