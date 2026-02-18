@@ -26,15 +26,7 @@
 <script setup lang="ts">
 const { modalOpen, selectedImage } = useImageModal();
 
-const img = useImage();
-
-const modalSrc = computed(() => {
-  return img(selectedImage.value!.src, {
-    width: 1280,
-    height: 720,
-    quality: 80,
-  });
-});
+const modalSrc = computed(() => selectedImage.value?.src ?? '');
 
 const naturalRatio = ref<number | null>(null);
 
