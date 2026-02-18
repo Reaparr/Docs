@@ -59,6 +59,7 @@
           src="/img/screenshots/demo-3-movies-library-1-poster-table.avif"
           width="800"
           height="450"
+          preload
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Movies library poster view"
           @click="
@@ -94,6 +95,7 @@
           height="450"
           class="rounded-xl border border-default w-full cursor-zoom-in"
           alt="Download screen"
+          preload
           @click="
             openModal({
               src: '/img/screenshots/demo-7-download-screen.avif',
@@ -305,4 +307,5 @@ useHead({
 });
 
 const { openModal } = useImageModal();
+useImagePreloader();
 </script>

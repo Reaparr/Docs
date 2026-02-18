@@ -4,6 +4,7 @@
     :width="size"
     :quality="100"
     format="avif"
+    :preload="{ fetchPriority: 'high' }"
     src="/img/logo/reaparr-full-512.png"
     alt="Reaparr Docs Logo" />
 </template>

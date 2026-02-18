@@ -5,6 +5,7 @@
     class="logo object-contain"
     :quality="100"
     format="avif"
+    :preload="{ fetchPriority: 'high' }"
     src="/img/logo/reaparr-title-full.png"
     alt="Reaparr Title" />
 </template>

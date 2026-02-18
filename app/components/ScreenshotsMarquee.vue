@@ -13,8 +13,7 @@
         :src="screenshot.src"
         width="460"
         height="258"
-        loading="eager"
-        fetchpriority="high"
+        :preload="{ fetchPriority: 'high' }"
         :alt="screenshot.text"
         class="aspect-video border border-default rounded-lg bg-white" />
     </UMarquee>
@@ -30,9 +29,7 @@
         :src="screenshot.src"
         width="460"
         height="258"
-        loading="eager"
-        fetchpriority="high"
-        :alt="screenshot.text"
+        :preload="{ fetchPriority: 'high' }"
         class="aspect-video border border-default rounded-lg bg-white" />
     </UMarquee>
     <UMarquee
@@ -48,8 +45,7 @@
         :src="screenshot.src"
         width="460"
         height="258"
-        loading="eager"
-        fetchpriority="high"
+        :preload="{ fetchPriority: 'high' }"
         :alt="screenshot.text"
         class="aspect-video border border-default rounded-lg bg-white" />
     </UMarquee>

@@ -50,6 +50,7 @@
 import { screenshots } from '~/composables';
 
 const { openModal } = useImageModal();
+useImagePreloader();
 const carousel = useTemplateRef('carousel');
 const activeIndex = ref(0);
 
