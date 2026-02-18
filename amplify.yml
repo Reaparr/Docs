@@ -11,7 +11,7 @@ frontend:
         - export PATH="$HOME/.bun/bin:$PATH"
         - bun run generate
   artifacts:
-    baseDirectory: .amplify-hosting
+    baseDirectory: .output/public
     files:
       - '**/*'
   cache:

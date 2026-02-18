@@ -3,6 +3,7 @@ import { fileURLToPath } from 'url';
 
 export default defineNuxtConfig({
   modules: ['@nuxt/eslint', '@nuxt/image', '@nuxt/ui', '@nuxt/content', '@vueuse/nuxt', '@nuxtjs/sitemap'],
+  ssr: true,
   /*
 	 ** Auto-import components
 	 *  Doc: https://github.com/nuxt/components
@@ -101,10 +102,6 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-07-11',
 
   nitro: {
-    preset: 'aws-amplify',
-    awsAmplify: {
-      runtime: 'nodejs20.x',
-    },
     prerender: {
       routes: ['/'],
       crawlLinks: true,
