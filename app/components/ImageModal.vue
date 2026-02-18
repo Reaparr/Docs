@@ -1,7 +1,9 @@
 <template>
   <UModal
     v-model:open="modalOpen"
-    :ui="{ content: 'max-w-[90vw] w-fit z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
+    title="Image Preview"
+    :description="selectedImage?.text"
+    :ui="{ content: 'max-w-[100vw] w-fit z-[100]', overlay: 'z-[99]', header: 'sr-only', body: 'p-0' }">
     <template #body>
       <div
         class="relative"
@@ -27,10 +29,10 @@ const { modalOpen, selectedImage } = useImageModal();
 const img = useImage();
 
 const modalSrc = computed(() => {
-  if (!selectedImage.value?.src) return '';
-  return img(selectedImage.value.src, {
-    width: 1600,
-    quality: 90,
+  return img(selectedImage.value!.src, {
+    width: 1280,
+    height: 720,
+    quality: 80,
   });
 });
 

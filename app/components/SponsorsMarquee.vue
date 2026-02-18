@@ -10,7 +10,7 @@
         :href="item.url"
         target="_blank"
         :aria-label="item.name"
-        class="flex flex-col items-center gap-1 w-20 py-2 rounded-md hover:bg-neutral-800 transition-colors">
+        class="flex flex-col items-center gap-1 w-20 py-2 rounded-md hover:bg-black/40 transition-colors">
         <UIcon
           :name="item.icon"
           class="size-6" />
@@ -19,7 +19,7 @@
     </UPageLogos>
 
     <UPageLogos
-      :ui="{ logos: 'flex-wrap' }"
+      :ui="{ root: 'my-16', logos: 'flex-wrap' }"
       title="Reaparr makes use of the following awesome projects:">
       <a
         v-for="item in tools"
@@ -27,7 +27,7 @@
         :href="item.url"
         target="_blank"
         :aria-label="item.name"
-        class="flex flex-col items-center gap-1 w-20 py-2 rounded-md hover:bg-neutral-800 transition-colors">
+        class="flex flex-col items-center gap-1 w-20 py-2rounded-md hover:bg-black/40 transition-colors">
         <UIcon
           :name="item.icon"
           class="size-6" />
