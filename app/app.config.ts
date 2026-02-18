@@ -45,6 +45,11 @@ export default defineAppConfig({
         modal: 'bg-black z-99', // Ensure the search modal appears above UI
       },
     },
+    contentSearchButton: {
+      slots: {
+        base: 'bg-black/20 cursor-pointer hover:bg-black/20 focus:bg-black/20 active:bg-black/20',
+      },
+    },
     prose: {
       img: {
         slots: {
