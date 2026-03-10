@@ -4,12 +4,17 @@
     :items="items"
     type="multiple"
     :unmount-on-hide="false"
+    :ui="{
+      item: 'border-b border-default last:border-b-0 transition-colors duration-200',
+      trigger: 'group flex-1 flex items-center gap-1.5 font-medium text-sm py-3.5 focus-visible:outline-primary min-w-0 group-data-[state=open]:text-primary',
+      body: 'text-sm pb-3.5 pl-3 border-l-2 border-primary/40 ml-0.5',
+    }"
     @update:model-value="onAccordionChange">
     <template
       v-if="isMounted"
-      #default="{ item }">
+      #default="{ item, open }">
       <div class="flex items-center justify-between w-full gap-2 pr-2">
-        <span class="flex-1">{{ item.label }}</span>
+        <span :class="['flex-1 transition-colors duration-200', open ? 'text-primary font-semibold' : '']">{{ item.label }}</span>
         <UButton
           :icon="
             copiedItem === item.value ? 'i-heroicons-check' : 'i-heroicons-link'
