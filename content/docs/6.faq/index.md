@@ -256,15 +256,15 @@ Other ways to support:
 
 - Star the GitHub repos: [Reaparr](https://github.com/Reaparr/Reaparr) and [Docs](https://github.com/Reaparr/Docs)
 - Contribute code/docs, report bugs, or suggest features
-- Join the [Discord](https://discord.com/invite/Qa3BtxN77g) and spread the word
+- Join the [Discord](https://discord.com/invite/k2KvDJbnNm) and spread the word
 
 #bug-report
 - Open an issue on GitHub: [Reaparr Issues](https://github.com/Reaparr/Reaparr/issues)
 - Include steps to reproduce, expected vs actual behavior, and relevant logs/screenshots.
-- You can also discuss first in the community [Discord](https://discord.com/invite/Qa3BtxN77g).
+- You can also discuss first in the community [Discord](https://discord.com/invite/k2KvDJbnNm).
 
 #project-status
-Check the [homepage](/) for what is currently happening or join the [discord](https://discord.com/invite/Qa3BtxN77g) so you can complain there about this FREE labour of love.
+Check the [homepage](/) for what is currently happening or join the [discord](https://discord.com/invite/k2KvDJbnNm) so you can complain there about this FREE labour of love.
 
 #hire
 Yes, I ([JasonLandbridge](https://github.com/JasonLandbridge)) work as a freelance Vue.js/.NET developer, and I'm always looking forward to the next awesome project. But if you're secretly hoping for more updates on Reaparr, then you might not want to hire me ;-)

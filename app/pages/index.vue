@@ -300,7 +300,7 @@ useHead({
         name: 'Reaparr',
         url: 'https://reaparr.rocks',
         logo: 'https://reaparr.rocks/favicon.svg',
-        sameAs: ['https://github.com/Reaparr/Reaparr', 'https://discord.com/invite/Qa3BtxN77g'],
+        sameAs: ['https://github.com/Reaparr/Reaparr', 'https://discord.com/invite/k2KvDJbnNm'],
       }),
     },
   ],

@@ -23,7 +23,7 @@
       <UButton
         as="a"
         class="mx-1 hidden sm:inline-flex"
-        href="https://discord.com/invite/Qa3BtxN77g"
+        href="https://discord.com/invite/k2KvDJbnNm"
         rel="noopener"
         variant="outline"
         :ui="btnUi"
@@ -109,7 +109,7 @@
       <div class="flex flex-col gap-2 border-t mt-4 pt-4">
         <UButton
           as="a"
-          href="https://discord.com/invite/Qa3BtxN77g"
+          href="https://discord.com/invite/k2KvDJbnNm"
           rel="noopener"
           variant="outline"
           target="_blank"

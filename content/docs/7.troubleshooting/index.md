@@ -487,7 +487,7 @@ Before asking for help, collect:
 
 Check if others have reported the same issue:
 - [GitHub Issues](https://github.com/Reaparr/Reaparr/issues)
-- [Discord Community](https://discord.com/invite/Qa3BtxN77g)
+- [Discord Community](https://discord.com/invite/k2KvDJbnNm)
 
 ### 3. Create a Bug Report
 
@@ -501,7 +501,7 @@ If it's a new issue, create a detailed bug report:
 ### 4. Join the Community
 
 Get real-time help:
-- [Discord Server](https://discord.com/invite/Qa3BtxN77g)
+- [Discord Server](https://discord.com/invite/k2KvDJbnNm)
 - Be patient and respectful
 - Provide all requested information
 
